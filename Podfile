@@ -13,6 +13,7 @@ pod 'Firebase/Storage'
 pod 'Firebase/Messaging'
 pod 'Firebase/Auth'
 pod 'Firebase/Functions'
+pod 'GoogleSignIn'
 
 pod 'AlamofireImage', '~> 3.3'
 pod 'Alamofire', '~> 4.7'

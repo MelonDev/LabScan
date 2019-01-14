@@ -16,6 +16,11 @@
 		157C6B5521EC5C3A009DF69A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 157C6B5321EC5C3A009DF69A /* LaunchScreen.storyboard */; };
 		157C6B6021EC5C3B009DF69A /* LabScanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C6B5F21EC5C3B009DF69A /* LabScanTests.swift */; };
 		157C6B6B21EC5C3B009DF69A /* LabScanUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C6B6A21EC5C3B009DF69A /* LabScanUITests.swift */; };
+		157C6B7921EC81F6009DF69A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 157C6B7821EC81F6009DF69A /* GoogleService-Info.plist */; };
+		157C6B7B21EC8903009DF69A /* MainIphoneStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 157C6B7A21EC8903009DF69A /* MainIphoneStoryboard.storyboard */; };
+		157C6B7D21EC8919009DF69A /* MainIpadStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 157C6B7C21EC8919009DF69A /* MainIpadStoryboard.storyboard */; };
+		157C6B8121EC8965009DF69A /* MainIpadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C6B8021EC8965009DF69A /* MainIpadViewController.swift */; };
+		157C6B8321EC8971009DF69A /* MainIphoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C6B8221EC8971009DF69A /* MainIphoneViewController.swift */; };
 		4B3E9661A733296E0754CC90 /* Pods_LabScan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01C402162B6BEA7A021D86F /* Pods_LabScan.framework */; };
 		A8B37D214830D7D99DBC3367 /* Pods_LabScanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71EA1317BB90CDF555368461 /* Pods_LabScanTests.framework */; };
 /* End PBXBuildFile section */
@@ -52,6 +57,11 @@
 		157C6B6621EC5C3B009DF69A /* LabScanUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LabScanUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		157C6B6A21EC5C3B009DF69A /* LabScanUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabScanUITests.swift; sourceTree = "<group>"; };
 		157C6B6C21EC5C3B009DF69A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		157C6B7821EC81F6009DF69A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		157C6B7A21EC8903009DF69A /* MainIphoneStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainIphoneStoryboard.storyboard; sourceTree = "<group>"; };
+		157C6B7C21EC8919009DF69A /* MainIpadStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainIpadStoryboard.storyboard; sourceTree = "<group>"; };
+		157C6B8021EC8965009DF69A /* MainIpadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainIpadViewController.swift; sourceTree = "<group>"; };
+		157C6B8221EC8971009DF69A /* MainIphoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainIphoneViewController.swift; sourceTree = "<group>"; };
 		198C3D8C23702A67FCCC9B7D /* Pods-LabScan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabScan.release.xcconfig"; path = "Pods/Target Support Files/Pods-LabScan/Pods-LabScan.release.xcconfig"; sourceTree = "<group>"; };
 		1ED66BA5DC29DDEAFCEEC9EB /* Pods_LabScanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LabScanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB6CA2764AB804C5A970217 /* Pods-LabScanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabScanTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LabScanTests/Pods-LabScanTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -116,11 +126,11 @@
 		157C6B4621EC5C39009DF69A /* LabScan */ = {
 			isa = PBXGroup;
 			children = (
+				157C6B8521EC899F009DF69A /* Storyboard */,
+				157C6B7E21EC8938009DF69A /* Controller */,
+				157C6B7821EC81F6009DF69A /* GoogleService-Info.plist */,
 				157C6B4721EC5C39009DF69A /* AppDelegate.swift */,
-				157C6B4921EC5C39009DF69A /* ViewController.swift */,
-				157C6B4B21EC5C39009DF69A /* Main.storyboard */,
 				157C6B5121EC5C3A009DF69A /* Assets.xcassets */,
-				157C6B5321EC5C3A009DF69A /* LaunchScreen.storyboard */,
 				157C6B5621EC5C3A009DF69A /* Info.plist */,
 				157C6B4E21EC5C39009DF69A /* LabScan.xcdatamodeld */,
 			);
@@ -143,6 +153,75 @@
 				157C6B6C21EC5C3B009DF69A /* Info.plist */,
 			);
 			path = LabScanUITests;
+			sourceTree = "<group>";
+		};
+		157C6B7E21EC8938009DF69A /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				157C6B7F21EC894B009DF69A /* View */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		157C6B7F21EC894B009DF69A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				157C6B8821EC89D6009DF69A /* Other */,
+				157C6B8421EC8987009DF69A /* Main */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		157C6B8421EC8987009DF69A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				157C6B8021EC8965009DF69A /* MainIpadViewController.swift */,
+				157C6B8221EC8971009DF69A /* MainIphoneViewController.swift */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		157C6B8521EC899F009DF69A /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				157C6B8A21EC8CD6009DF69A /* Launch */,
+				157C6B8721EC89CB009DF69A /* Other */,
+				157C6B8621EC89AC009DF69A /* Main */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		157C6B8621EC89AC009DF69A /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				157C6B7A21EC8903009DF69A /* MainIphoneStoryboard.storyboard */,
+				157C6B7C21EC8919009DF69A /* MainIpadStoryboard.storyboard */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		157C6B8721EC89CB009DF69A /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				157C6B4B21EC5C39009DF69A /* Main.storyboard */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		157C6B8821EC89D6009DF69A /* Other */ = {
+			isa = PBXGroup;
+			children = (
+				157C6B4921EC5C39009DF69A /* ViewController.swift */,
+			);
+			path = Other;
+			sourceTree = "<group>";
+		};
+		157C6B8A21EC8CD6009DF69A /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				157C6B5321EC5C3A009DF69A /* LaunchScreen.storyboard */,
+			);
+			path = Launch;
 			sourceTree = "<group>";
 		};
 		829F3CB613EEC940D734B2D7 /* Frameworks */ = {
@@ -180,6 +259,7 @@
 				157C6B4121EC5C39009DF69A /* Frameworks */,
 				157C6B4221EC5C39009DF69A /* Resources */,
 				999B6CC5D62808BD4AD5C31A /* [CP] Embed Pods Frameworks */,
+				3989832716DA435936C35503 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -276,9 +356,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				157C6B7D21EC8919009DF69A /* MainIpadStoryboard.storyboard in Resources */,
 				157C6B5521EC5C3A009DF69A /* LaunchScreen.storyboard in Resources */,
+				157C6B7921EC81F6009DF69A /* GoogleService-Info.plist in Resources */,
 				157C6B5221EC5C3A009DF69A /* Assets.xcassets in Resources */,
 				157C6B4D21EC5C39009DF69A /* Main.storyboard in Resources */,
+				157C6B7B21EC8903009DF69A /* MainIphoneStoryboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -321,6 +404,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		3989832716DA435936C35503 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LabScan/Pods-LabScan-resources.sh",
+				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LabScan/Pods-LabScan-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		6149225C97B27A39482FD464 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -355,6 +460,7 @@
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/TORoundedTableView/TORoundedTableView.framework",
@@ -368,6 +474,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TORoundedTableView.framework",
@@ -408,7 +515,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				157C6B8321EC8971009DF69A /* MainIphoneViewController.swift in Sources */,
 				157C6B4A21EC5C39009DF69A /* ViewController.swift in Sources */,
+				157C6B8121EC8965009DF69A /* MainIpadViewController.swift in Sources */,
 				157C6B4821EC5C39009DF69A /* AppDelegate.swift in Sources */,
 				157C6B5021EC5C39009DF69A /* LabScan.xcdatamodeld in Sources */,
 			);
