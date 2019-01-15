@@ -19,6 +19,11 @@ pod 'AlamofireImage', '~> 3.3'
 pod 'Alamofire', '~> 4.7'
 pod 'TORoundedTableView'
 
+pod 'Hero'
+
+pod 'CenteredCollectionView'
+pod 'UPCarouselFlowLayout'
+
   target 'LabScanTests' do
     inherit! :search_paths
     # Pods for testing

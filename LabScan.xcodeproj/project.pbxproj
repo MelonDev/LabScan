@@ -21,6 +21,15 @@
 		157C6B7D21EC8919009DF69A /* MainIpadStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 157C6B7C21EC8919009DF69A /* MainIpadStoryboard.storyboard */; };
 		157C6B8121EC8965009DF69A /* MainIpadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C6B8021EC8965009DF69A /* MainIpadViewController.swift */; };
 		157C6B8321EC8971009DF69A /* MainIphoneViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C6B8221EC8971009DF69A /* MainIphoneViewController.swift */; };
+		157C6BBF21ED9E25009DF69A /* MainConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C6BBE21ED9E25009DF69A /* MainConfig.swift */; };
+		157C6BC221EDB860009DF69A /* SukhumvitSet.ttc in Resources */ = {isa = PBXBuildFile; fileRef = 157C6BC121EDB4C2009DF69A /* SukhumvitSet.ttc */; };
+		157C6BC621EDE218009DF69A /* AppStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 157C6BC521EDE218009DF69A /* AppStoryboard.storyboard */; };
+		157C6BCA21EE6ABD009DF69A /* MenuiPhoneCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C6BC821EE6ABD009DF69A /* MenuiPhoneCollectionViewCell.swift */; };
+		157C6BCB21EE6ABD009DF69A /* MenuiPhoneCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 157C6BC921EE6ABD009DF69A /* MenuiPhoneCollectionViewCell.xib */; };
+		157C6BCE21EE6BD7009DF69A /* UPCarouselFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C6BCD21EE6BD7009DF69A /* UPCarouselFlowLayout.swift */; };
+		157C6BD321EE6FEF009DF69A /* WalkThroughCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C6BD021EE6FEE009DF69A /* WalkThroughCollectionViewCell.swift */; };
+		157C6BD421EE6FEF009DF69A /* WalkThroughCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 157C6BD121EE6FEF009DF69A /* WalkThroughCollectionViewCell.xib */; };
+		157C6BD521EE6FEF009DF69A /* Walthrough.png in Resources */ = {isa = PBXBuildFile; fileRef = 157C6BD221EE6FEF009DF69A /* Walthrough.png */; };
 		4B3E9661A733296E0754CC90 /* Pods_LabScan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01C402162B6BEA7A021D86F /* Pods_LabScan.framework */; };
 		A8B37D214830D7D99DBC3367 /* Pods_LabScanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71EA1317BB90CDF555368461 /* Pods_LabScanTests.framework */; };
 /* End PBXBuildFile section */
@@ -62,6 +71,15 @@
 		157C6B7C21EC8919009DF69A /* MainIpadStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainIpadStoryboard.storyboard; sourceTree = "<group>"; };
 		157C6B8021EC8965009DF69A /* MainIpadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainIpadViewController.swift; sourceTree = "<group>"; };
 		157C6B8221EC8971009DF69A /* MainIphoneViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainIphoneViewController.swift; sourceTree = "<group>"; };
+		157C6BBE21ED9E25009DF69A /* MainConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MainConfig.swift; path = ../Main/MainConfig.swift; sourceTree = "<group>"; };
+		157C6BC121EDB4C2009DF69A /* SukhumvitSet.ttc */ = {isa = PBXFileReference; lastKnownFileType = file; name = SukhumvitSet.ttc; path = "/Users/android/Documents/Xcode Project/LabScan/LabScan/Resource/SukhumvitSet.ttc"; sourceTree = "<absolute>"; };
+		157C6BC521EDE218009DF69A /* AppStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AppStoryboard.storyboard; sourceTree = "<group>"; };
+		157C6BC821EE6ABD009DF69A /* MenuiPhoneCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuiPhoneCollectionViewCell.swift; sourceTree = "<group>"; };
+		157C6BC921EE6ABD009DF69A /* MenuiPhoneCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MenuiPhoneCollectionViewCell.xib; sourceTree = "<group>"; };
+		157C6BCD21EE6BD7009DF69A /* UPCarouselFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UPCarouselFlowLayout.swift; sourceTree = "<group>"; };
+		157C6BD021EE6FEE009DF69A /* WalkThroughCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkThroughCollectionViewCell.swift; sourceTree = "<group>"; };
+		157C6BD121EE6FEF009DF69A /* WalkThroughCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalkThroughCollectionViewCell.xib; sourceTree = "<group>"; };
+		157C6BD221EE6FEF009DF69A /* Walthrough.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Walthrough.png; sourceTree = "<group>"; };
 		198C3D8C23702A67FCCC9B7D /* Pods-LabScan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabScan.release.xcconfig"; path = "Pods/Target Support Files/Pods-LabScan/Pods-LabScan.release.xcconfig"; sourceTree = "<group>"; };
 		1ED66BA5DC29DDEAFCEEC9EB /* Pods_LabScanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LabScanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB6CA2764AB804C5A970217 /* Pods-LabScanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabScanTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LabScanTests/Pods-LabScanTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -126,6 +144,8 @@
 		157C6B4621EC5C39009DF69A /* LabScan */ = {
 			isa = PBXGroup;
 			children = (
+				157C6BC721EE6A90009DF69A /* Cell */,
+				157C6BC021EDB4A5009DF69A /* Resource */,
 				157C6B8521EC899F009DF69A /* Storyboard */,
 				157C6B7E21EC8938009DF69A /* Controller */,
 				157C6B7821EC81F6009DF69A /* GoogleService-Info.plist */,
@@ -166,6 +186,7 @@
 		157C6B7F21EC894B009DF69A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				157C6BBD21ED9E10009DF69A /* Share */,
 				157C6B8821EC89D6009DF69A /* Other */,
 				157C6B8421EC8987009DF69A /* Main */,
 			);
@@ -184,9 +205,10 @@
 		157C6B8521EC899F009DF69A /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				157C6B8621EC89AC009DF69A /* Main */,
+				157C6BC421EDE1F0009DF69A /* App */,
 				157C6B8A21EC8CD6009DF69A /* Launch */,
 				157C6B8721EC89CB009DF69A /* Other */,
-				157C6B8621EC89AC009DF69A /* Main */,
 			);
 			path = Storyboard;
 			sourceTree = "<group>";
@@ -222,6 +244,59 @@
 				157C6B5321EC5C3A009DF69A /* LaunchScreen.storyboard */,
 			);
 			path = Launch;
+			sourceTree = "<group>";
+		};
+		157C6BBD21ED9E10009DF69A /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				157C6BBE21ED9E25009DF69A /* MainConfig.swift */,
+			);
+			path = Share;
+			sourceTree = "<group>";
+		};
+		157C6BC021EDB4A5009DF69A /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				157C6BC121EDB4C2009DF69A /* SukhumvitSet.ttc */,
+				157C6BCD21EE6BD7009DF69A /* UPCarouselFlowLayout.swift */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		157C6BC421EDE1F0009DF69A /* App */ = {
+			isa = PBXGroup;
+			children = (
+				157C6BC521EDE218009DF69A /* AppStoryboard.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		157C6BC721EE6A90009DF69A /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				157C6BCF21EE6FBF009DF69A /* Test */,
+				157C6BCC21EE6AC7009DF69A /* MenuIphone */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		157C6BCC21EE6AC7009DF69A /* MenuIphone */ = {
+			isa = PBXGroup;
+			children = (
+				157C6BC821EE6ABD009DF69A /* MenuiPhoneCollectionViewCell.swift */,
+				157C6BC921EE6ABD009DF69A /* MenuiPhoneCollectionViewCell.xib */,
+			);
+			path = MenuIphone;
+			sourceTree = "<group>";
+		};
+		157C6BCF21EE6FBF009DF69A /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				157C6BD021EE6FEE009DF69A /* WalkThroughCollectionViewCell.swift */,
+				157C6BD121EE6FEF009DF69A /* WalkThroughCollectionViewCell.xib */,
+				157C6BD221EE6FEF009DF69A /* Walthrough.png */,
+			);
+			path = Test;
 			sourceTree = "<group>";
 		};
 		829F3CB613EEC940D734B2D7 /* Frameworks */ = {
@@ -356,10 +431,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				157C6BC221EDB860009DF69A /* SukhumvitSet.ttc in Resources */,
+				157C6BD421EE6FEF009DF69A /* WalkThroughCollectionViewCell.xib in Resources */,
+				157C6BC621EDE218009DF69A /* AppStoryboard.storyboard in Resources */,
 				157C6B7D21EC8919009DF69A /* MainIpadStoryboard.storyboard in Resources */,
+				157C6BD521EE6FEF009DF69A /* Walthrough.png in Resources */,
 				157C6B5521EC5C3A009DF69A /* LaunchScreen.storyboard in Resources */,
 				157C6B7921EC81F6009DF69A /* GoogleService-Info.plist in Resources */,
 				157C6B5221EC5C3A009DF69A /* Assets.xcassets in Resources */,
+				157C6BCB21EE6ABD009DF69A /* MenuiPhoneCollectionViewCell.xib in Resources */,
 				157C6B4D21EC5C39009DF69A /* Main.storyboard in Resources */,
 				157C6B7B21EC8903009DF69A /* MainIphoneStoryboard.storyboard in Resources */,
 			);
@@ -459,11 +539,14 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-LabScan/Pods-LabScan-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/CenteredCollectionView/CenteredCollectionView.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Hero/Hero.framework",
 				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
 				"${BUILT_PRODUCTS_DIR}/TORoundedTableView/TORoundedTableView.framework",
+				"${BUILT_PRODUCTS_DIR}/UPCarouselFlowLayout/UPCarouselFlowLayout.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -473,11 +556,14 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CenteredCollectionView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Hero.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TORoundedTableView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UPCarouselFlowLayout.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -517,8 +603,12 @@
 			files = (
 				157C6B8321EC8971009DF69A /* MainIphoneViewController.swift in Sources */,
 				157C6B4A21EC5C39009DF69A /* ViewController.swift in Sources */,
+				157C6BBF21ED9E25009DF69A /* MainConfig.swift in Sources */,
+				157C6BD321EE6FEF009DF69A /* WalkThroughCollectionViewCell.swift in Sources */,
+				157C6BCA21EE6ABD009DF69A /* MenuiPhoneCollectionViewCell.swift in Sources */,
 				157C6B8121EC8965009DF69A /* MainIpadViewController.swift in Sources */,
 				157C6B4821EC5C39009DF69A /* AppDelegate.swift in Sources */,
+				157C6BCE21EE6BD7009DF69A /* UPCarouselFlowLayout.swift in Sources */,
 				157C6B5021EC5C39009DF69A /* LabScan.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

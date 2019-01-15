@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="WalkThroughCollectionViewCell" customModule="ICarousel_effect" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="291" height="387"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="291" height="387"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JSo-g1-IYC">
+                        <rect key="frame" x="10" y="10" width="271" height="367"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Walthrough.png" translatesAutoresizingMaskIntoConstraints="NO" id="ese-bl-jmS">
+                                <rect key="frame" x="60" y="30" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="Pz0-FE-x50"/>
+                                    <constraint firstAttribute="width" constant="150" id="Xwe-4x-P6s"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7wz-d6-XpR">
+                                <rect key="frame" x="0.0" y="230" width="271" height="27.5"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="23"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iQE-Ec-Orz">
+                                <rect key="frame" x="0.0" y="272.5" width="271" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7wz-d6-XpR" firstAttribute="top" secondItem="ese-bl-jmS" secondAttribute="bottom" constant="50" id="IxB-FQ-TrD"/>
+                            <constraint firstItem="iQE-Ec-Orz" firstAttribute="leading" secondItem="JSo-g1-IYC" secondAttribute="leading" id="JxV-O9-GWM"/>
+                            <constraint firstItem="7wz-d6-XpR" firstAttribute="leading" secondItem="JSo-g1-IYC" secondAttribute="leading" id="O35-46-ct8"/>
+                            <constraint firstAttribute="trailing" secondItem="iQE-Ec-Orz" secondAttribute="trailing" id="SDS-Ni-VO6"/>
+                            <constraint firstAttribute="trailing" secondItem="7wz-d6-XpR" secondAttribute="trailing" id="TeD-Hw-C2J"/>
+                            <constraint firstItem="ese-bl-jmS" firstAttribute="top" secondItem="JSo-g1-IYC" secondAttribute="top" constant="30" id="ZF9-1i-VRK"/>
+                            <constraint firstItem="iQE-Ec-Orz" firstAttribute="top" secondItem="7wz-d6-XpR" secondAttribute="bottom" constant="15" id="d1n-5n-IPB"/>
+                            <constraint firstItem="ese-bl-jmS" firstAttribute="centerX" secondItem="JSo-g1-IYC" secondAttribute="centerX" id="ujM-yr-TLV"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="JSo-g1-IYC" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="10" id="DEZ-2V-jk7"/>
+                <constraint firstAttribute="bottom" secondItem="JSo-g1-IYC" secondAttribute="bottom" constant="10" id="EW7-ot-QBV"/>
+                <constraint firstAttribute="trailing" secondItem="JSo-g1-IYC" secondAttribute="trailing" constant="10" id="FxE-Qe-Krx"/>
+                <constraint firstItem="JSo-g1-IYC" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="10" id="Zmi-4R-iIx"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="291" height="387"/>
+            <connections>
+                <outlet property="cntView" destination="JSo-g1-IYC" id="Y6z-cf-BeH"/>
+                <outlet property="imgvWalkthrough" destination="ese-bl-jmS" id="3Eo-mQ-g5J"/>
+                <outlet property="lblSubTitle" destination="iQE-Ec-Orz" id="L5h-ZV-eFQ"/>
+                <outlet property="lblTitle" destination="7wz-d6-XpR" id="j8F-oZ-jmB"/>
+            </connections>
+            <point key="canvasLocation" x="26.5" y="69.5"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="Walthrough.png" width="354" height="320"/>
+    </resources>
+</document>
