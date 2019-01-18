@@ -8,29 +8,72 @@
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="SukhumvitSet.ttc">
+            <string>SukhumvitSet-Bold</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="" id="gTV-IL-0wX" customClass="MenuiPhoneCollectionViewCell" customModule="LabScan" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="249" height="430"/>
+            <rect key="frame" x="0.0" y="0.0" width="249" height="353"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="249" height="430"/>
+                <rect key="frame" x="0.0" y="0.0" width="249" height="353"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tg0-OR-0HY">
-                        <rect key="frame" x="0.0" y="0.0" width="249" height="430"/>
+                        <rect key="frame" x="0.0" y="0.0" width="249" height="353"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qh2-7b-8BA">
-                                <rect key="frame" x="14" y="10" width="221" height="404"/>
+                                <rect key="frame" x="14" y="10" width="221" height="333"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="9nV-jl-43j">
+                                        <rect key="frame" x="0.0" y="0.0" width="221" height="333"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="หัวข้อ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JJh-M5-tIZ">
+                                        <rect key="frame" x="20" y="20" width="74" height="50.5"/>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="32"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="คำอธิบาย" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S3O-FH-kXd">
+                                        <rect key="frame" x="20" y="62.5" width="64.5" height="25.5"/>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="16"/>
+                                        <color key="textColor" white="1" alpha="0.70395440924657537" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SE6-Tc-adp">
+                                        <rect key="frame" x="10.5" y="96.5" width="200" height="200"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="hId-2x-U3H"/>
+                                            <constraint firstAttribute="height" constant="200" id="t2T-2Q-tWC"/>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="JJh-M5-tIZ" firstAttribute="top" secondItem="qh2-7b-8BA" secondAttribute="top" constant="20" id="1Vg-rh-NfZ"/>
+                                    <constraint firstItem="9nV-jl-43j" firstAttribute="leading" secondItem="qh2-7b-8BA" secondAttribute="leading" id="C0k-Kl-TWn"/>
+                                    <constraint firstItem="9nV-jl-43j" firstAttribute="top" secondItem="qh2-7b-8BA" secondAttribute="top" id="CGc-uy-v2m"/>
+                                    <constraint firstAttribute="bottom" secondItem="9nV-jl-43j" secondAttribute="bottom" id="TLI-6n-wau"/>
+                                    <constraint firstItem="SE6-Tc-adp" firstAttribute="centerX" secondItem="qh2-7b-8BA" secondAttribute="centerX" id="XDh-nO-LNn"/>
+                                    <constraint firstItem="JJh-M5-tIZ" firstAttribute="leading" secondItem="qh2-7b-8BA" secondAttribute="leading" constant="20" id="YAM-bq-tuA"/>
+                                    <constraint firstItem="S3O-FH-kXd" firstAttribute="top" secondItem="JJh-M5-tIZ" secondAttribute="bottom" constant="-8" id="ch0-cO-EKC"/>
+                                    <constraint firstItem="SE6-Tc-adp" firstAttribute="centerY" secondItem="qh2-7b-8BA" secondAttribute="centerY" constant="30" id="hhy-T4-7LN"/>
+                                    <constraint firstItem="S3O-FH-kXd" firstAttribute="leading" secondItem="qh2-7b-8BA" secondAttribute="leading" constant="20" id="wqz-h0-x97"/>
+                                    <constraint firstAttribute="trailing" secondItem="9nV-jl-43j" secondAttribute="trailing" id="zbH-yl-wrl"/>
+                                </constraints>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="qh2-7b-8BA" secondAttribute="bottom" constant="16" id="7K3-WX-E28"/>
                             <constraint firstItem="qh2-7b-8BA" firstAttribute="top" secondItem="Tg0-OR-0HY" secondAttribute="top" constant="10" id="7Og-Nr-2gM"/>
+                            <constraint firstItem="qh2-7b-8BA" firstAttribute="centerX" secondItem="Tg0-OR-0HY" secondAttribute="centerX" id="ELa-eI-o3K"/>
                             <constraint firstAttribute="trailing" secondItem="qh2-7b-8BA" secondAttribute="trailing" constant="14" id="Pyd-bm-aLA"/>
+                            <constraint firstItem="qh2-7b-8BA" firstAttribute="centerY" secondItem="Tg0-OR-0HY" secondAttribute="centerY" id="X2k-QT-cHh"/>
                             <constraint firstItem="qh2-7b-8BA" firstAttribute="leading" secondItem="Tg0-OR-0HY" secondAttribute="leading" constant="14" id="gnN-Zw-ub8"/>
                         </constraints>
                     </view>
@@ -43,11 +86,15 @@
                 <constraint firstItem="Tg0-OR-0HY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="wi3-1W-3Lo"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="249" height="430"/>
+            <size key="customSize" width="249" height="353"/>
             <connections>
+                <outlet property="cellDesciption" destination="S3O-FH-kXd" id="DOw-bl-Orf"/>
+                <outlet property="cellIcon" destination="SE6-Tc-adp" id="FLR-zE-c7y"/>
+                <outlet property="cellImageBg" destination="9nV-jl-43j" id="qoC-68-G3Q"/>
+                <outlet property="cellTitle" destination="JJh-M5-tIZ" id="bz1-Pi-Ki7"/>
                 <outlet property="cellView" destination="qh2-7b-8BA" id="yyg-iB-Oh3"/>
             </connections>
-            <point key="canvasLocation" x="136.80000000000001" y="208.69565217391306"/>
+            <point key="canvasLocation" x="136.80000000000001" y="174.06296851574214"/>
         </collectionViewCell>
     </objects>
 </document>

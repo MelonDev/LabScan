@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09AEC89662888B62797390C6 /* Pods_LabScanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED66BA5DC29DDEAFCEEC9EB /* Pods_LabScanUITests.framework */; };
+		150727B521F15ED000667D13 /* TestAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150727B421F15ED000667D13 /* TestAppViewController.swift */; };
 		157C6B4821EC5C39009DF69A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C6B4721EC5C39009DF69A /* AppDelegate.swift */; };
 		157C6B4A21EC5C39009DF69A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C6B4921EC5C39009DF69A /* ViewController.swift */; };
 		157C6B4D21EC5C39009DF69A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 157C6B4B21EC5C39009DF69A /* Main.storyboard */; };
@@ -30,6 +31,8 @@
 		157C6BD321EE6FEF009DF69A /* WalkThroughCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C6BD021EE6FEE009DF69A /* WalkThroughCollectionViewCell.swift */; };
 		157C6BD421EE6FEF009DF69A /* WalkThroughCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 157C6BD121EE6FEF009DF69A /* WalkThroughCollectionViewCell.xib */; };
 		157C6BD521EE6FEF009DF69A /* Walthrough.png in Resources */ = {isa = PBXBuildFile; fileRef = 157C6BD221EE6FEF009DF69A /* Walthrough.png */; };
+		157C6BD721EE7F08009DF69A /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C6BD621EE7F08009DF69A /* TestViewController.swift */; };
+		157C6BD921EF10D6009DF69A /* MenuStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C6BD821EF10D6009DF69A /* MenuStruct.swift */; };
 		4B3E9661A733296E0754CC90 /* Pods_LabScan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01C402162B6BEA7A021D86F /* Pods_LabScan.framework */; };
 		A8B37D214830D7D99DBC3367 /* Pods_LabScanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71EA1317BB90CDF555368461 /* Pods_LabScanTests.framework */; };
 /* End PBXBuildFile section */
@@ -52,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		150727B421F15ED000667D13 /* TestAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppViewController.swift; sourceTree = "<group>"; };
 		157C6B4421EC5C39009DF69A /* LabScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LabScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		157C6B4721EC5C39009DF69A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		157C6B4921EC5C39009DF69A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -80,6 +84,8 @@
 		157C6BD021EE6FEE009DF69A /* WalkThroughCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkThroughCollectionViewCell.swift; sourceTree = "<group>"; };
 		157C6BD121EE6FEF009DF69A /* WalkThroughCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalkThroughCollectionViewCell.xib; sourceTree = "<group>"; };
 		157C6BD221EE6FEF009DF69A /* Walthrough.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Walthrough.png; sourceTree = "<group>"; };
+		157C6BD621EE7F08009DF69A /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
+		157C6BD821EF10D6009DF69A /* MenuStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuStruct.swift; sourceTree = "<group>"; };
 		198C3D8C23702A67FCCC9B7D /* Pods-LabScan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabScan.release.xcconfig"; path = "Pods/Target Support Files/Pods-LabScan/Pods-LabScan.release.xcconfig"; sourceTree = "<group>"; };
 		1ED66BA5DC29DDEAFCEEC9EB /* Pods_LabScanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LabScanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB6CA2764AB804C5A970217 /* Pods-LabScanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabScanTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LabScanTests/Pods-LabScanTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -196,8 +202,8 @@
 		157C6B8421EC8987009DF69A /* Main */ = {
 			isa = PBXGroup;
 			children = (
-				157C6B8021EC8965009DF69A /* MainIpadViewController.swift */,
 				157C6B8221EC8971009DF69A /* MainIphoneViewController.swift */,
+				157C6B8021EC8965009DF69A /* MainIpadViewController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -250,6 +256,9 @@
 			isa = PBXGroup;
 			children = (
 				157C6BBE21ED9E25009DF69A /* MainConfig.swift */,
+				157C6BD621EE7F08009DF69A /* TestViewController.swift */,
+				157C6BD821EF10D6009DF69A /* MenuStruct.swift */,
+				150727B421F15ED000667D13 /* TestAppViewController.swift */,
 			);
 			path = Share;
 			sourceTree = "<group>";
@@ -601,12 +610,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				157C6BD721EE7F08009DF69A /* TestViewController.swift in Sources */,
 				157C6B8321EC8971009DF69A /* MainIphoneViewController.swift in Sources */,
+				150727B521F15ED000667D13 /* TestAppViewController.swift in Sources */,
 				157C6B4A21EC5C39009DF69A /* ViewController.swift in Sources */,
 				157C6BBF21ED9E25009DF69A /* MainConfig.swift in Sources */,
 				157C6BD321EE6FEF009DF69A /* WalkThroughCollectionViewCell.swift in Sources */,
 				157C6BCA21EE6ABD009DF69A /* MenuiPhoneCollectionViewCell.swift in Sources */,
 				157C6B8121EC8965009DF69A /* MainIpadViewController.swift in Sources */,
+				157C6BD921EF10D6009DF69A /* MenuStruct.swift in Sources */,
 				157C6B4821EC5C39009DF69A /* AppDelegate.swift in Sources */,
 				157C6BCE21EE6BD7009DF69A /* UPCarouselFlowLayout.swift in Sources */,
 				157C6B5021EC5C39009DF69A /* LabScan.xcdatamodeld in Sources */,

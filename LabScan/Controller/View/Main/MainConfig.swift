@@ -7,3 +7,16 @@
 //
 
 import Foundation
+import UIKit
+import Hero
+
+class MainConfig {
+    
+    func requireViewController(storyboard :String,viewController :String) -> UIViewController {
+        let storyboard = UIStoryboard(name: storyboard, bundle: nil)
+        let vc = storyboard.instantiateViewController(withIdentifier: viewController)
+        
+        return vc
+    }
+    
+}

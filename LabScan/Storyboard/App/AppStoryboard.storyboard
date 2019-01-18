@@ -9,16 +9,46 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Test App View Controller-->
         <scene sceneID="T9Y-d3-3RY">
             <objects>
-                <viewController id="mbV-zw-Kwe" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Xe9-dT-STx">
+                <viewController storyboardIdentifier="testAppVC" id="mbV-zw-Kwe" customClass="TestAppViewController" customModule="LabScan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Vpq-br-1DI">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <viewLayoutGuide key="safeArea" id="NLI-gB-3kC"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9dQ-HX-yCq">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rTj-Pd-kOv">
+                                        <rect key="frame" x="16" y="231" width="343" height="400"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="400" id="zxH-47-m3z"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="rTj-Pd-kOv" firstAttribute="leading" secondItem="9dQ-HX-yCq" secondAttribute="leading" constant="16" id="0Y8-hv-DCv"/>
+                                    <constraint firstAttribute="trailing" secondItem="rTj-Pd-kOv" secondAttribute="trailing" constant="16" id="76z-bv-Wek"/>
+                                    <constraint firstAttribute="bottom" secondItem="rTj-Pd-kOv" secondAttribute="bottom" constant="16" id="i3o-Es-cWt"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="D9u-dA-qRp" firstAttribute="trailing" secondItem="9dQ-HX-yCq" secondAttribute="trailing" id="Eqn-VE-648"/>
+                            <constraint firstItem="D9u-dA-qRp" firstAttribute="bottom" secondItem="9dQ-HX-yCq" secondAttribute="bottom" id="MEa-a2-RVA"/>
+                            <constraint firstItem="9dQ-HX-yCq" firstAttribute="leading" secondItem="D9u-dA-qRp" secondAttribute="leading" id="ZJT-Wc-Gl9"/>
+                            <constraint firstItem="9dQ-HX-yCq" firstAttribute="top" secondItem="D9u-dA-qRp" secondAttribute="top" id="wlD-ad-JuP"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="D9u-dA-qRp"/>
                     </view>
+                    <connections>
+                        <outlet property="contentView" destination="rTj-Pd-kOv" id="TKZ-tf-Z7o"/>
+                        <outlet property="testView" destination="9dQ-HX-yCq" id="PLA-sW-W93"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SgZ-T2-krV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
