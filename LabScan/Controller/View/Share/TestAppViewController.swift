@@ -51,6 +51,10 @@ class TestAppViewController: UIViewController {
         
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     @objc func someAction(_ sender:UITapGestureRecognizer){
         
         self.dismiss(animated: true, completion: nil)

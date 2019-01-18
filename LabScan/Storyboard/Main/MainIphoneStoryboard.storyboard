@@ -38,6 +38,9 @@
                                             <constraint firstAttribute="height" constant="30" id="can-Ge-m9I"/>
                                         </constraints>
                                         <state key="normal" title="Button" image="user-2"/>
+                                        <connections>
+                                            <action selector="profileAction:" destination="2RG-IX-Sjs" eventType="touchUpInside" id="o1z-co-lYr"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.93725490196078431" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -166,6 +169,8 @@
                         <userDefinedRuntimeAttribute type="boolean" keyPath="isHeroEnabled" value="YES"/>
                     </userDefinedRuntimeAttributes>
                     <connections>
+                        <outlet property="FavoriteView" destination="cau-XM-F5V" id="lLC-BB-ef4"/>
+                        <outlet property="SearchView" destination="TXs-F0-HHS" id="lJU-rO-Jwi"/>
                         <outlet property="menuCollection" destination="JHi-dI-oA1" id="FgL-Jp-ie3"/>
                         <outlet property="menuPageCon" destination="GFP-8F-erB" id="7Hq-MC-Eib"/>
                     </connections>

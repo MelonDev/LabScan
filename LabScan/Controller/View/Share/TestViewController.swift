@@ -20,13 +20,15 @@ class TestViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let config = MainConfig()
 
         self.hero.isEnabled = true
-        self.view.hero.id = "TEST"
+        self.view.hero.id = "VIEW"
         
         if(bgColor != nil){
             self.view.backgroundColor = bgColor
-            if(isIpad()){
+            if(config.isIpad()){
                 self.ipadTestView.backgroundColor = bgColor
             }else {
                 self.testView.backgroundColor = bgColor
@@ -34,13 +36,13 @@ class TestViewController: UIViewController {
             }
         }
         
-        if(isIpad()){
+        if(config.isIpad()){
             ipadContentView.hero.modifiers = [.translate(y: 500), .useGlobalCoordinateSpace]
             
             let myView = UITapGestureRecognizer(target: self, action: #selector(someAction(_:)))
             self.ipadTestView.addGestureRecognizer(myView)
             
-            setStyle(viewLayer: ipadContentView)
+            config.setStyle(viewLayer: ipadContentView)
             
         } else {
             contentView.hero.modifiers = [.translate(y: 500), .useGlobalCoordinateSpace]
@@ -49,7 +51,7 @@ class TestViewController: UIViewController {
             self.testView.addGestureRecognizer(myView)
 
             
-            setStyle(viewLayer: contentView)
+            config.setStyle(viewLayer: contentView)
         }
         
        
@@ -71,14 +73,9 @@ class TestViewController: UIViewController {
     @objc func someAction(_ sender:UITapGestureRecognizer){
         
         self.dismiss(animated: true, completion: nil)
-
-        
-        //viewLabel2.isHidden = true
     }
     
-    func isIpad() -> Bool {
-        return UIDevice.current.userInterfaceIdiom == .pad
-    }
+    
 
     /*
     // MARK: - Navigation
@@ -89,15 +86,6 @@ class TestViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    func setStyle(viewLayer :UIView) -> UIView {
-        viewLayer.layer.masksToBounds = false
-        viewLayer.layer.shadowOffset = CGSize(width: 0, height: 4)
-        viewLayer.layer.shadowRadius = 10
-        viewLayer.layer.shadowOpacity = 0.4
-        viewLayer.layer.cornerRadius = 16
-        return viewLayer
-    }
     
 
 }

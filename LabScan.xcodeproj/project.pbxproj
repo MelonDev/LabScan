@@ -33,6 +33,13 @@
 		157C6BD521EE6FEF009DF69A /* Walthrough.png in Resources */ = {isa = PBXBuildFile; fileRef = 157C6BD221EE6FEF009DF69A /* Walthrough.png */; };
 		157C6BD721EE7F08009DF69A /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C6BD621EE7F08009DF69A /* TestViewController.swift */; };
 		157C6BD921EF10D6009DF69A /* MenuStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C6BD821EF10D6009DF69A /* MenuStruct.swift */; };
+		15E9CABF21F1B5C900E4083B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9CABE21F1B5C900E4083B /* SearchViewController.swift */; };
+		15E9CAC121F1B5E200E4083B /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9CAC021F1B5E200E4083B /* CategoryViewController.swift */; };
+		15E9CAC321F1B5F600E4083B /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9CAC221F1B5F600E4083B /* HistoryViewController.swift */; };
+		15E9CAC521F1B60200E4083B /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9CAC421F1B60200E4083B /* ProfileViewController.swift */; };
+		15E9CAC721F1B61200E4083B /* ScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9CAC621F1B61200E4083B /* ScanViewController.swift */; };
+		15E9CAC921F1B62800E4083B /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9CAC821F1B62800E4083B /* FavoriteViewController.swift */; };
+		15E9CACB21F1B65100E4083B /* CallCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9CACA21F1B65100E4083B /* CallCenter.swift */; };
 		4B3E9661A733296E0754CC90 /* Pods_LabScan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A01C402162B6BEA7A021D86F /* Pods_LabScan.framework */; };
 		A8B37D214830D7D99DBC3367 /* Pods_LabScanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 71EA1317BB90CDF555368461 /* Pods_LabScanTests.framework */; };
 /* End PBXBuildFile section */
@@ -86,6 +93,13 @@
 		157C6BD221EE6FEF009DF69A /* Walthrough.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Walthrough.png; sourceTree = "<group>"; };
 		157C6BD621EE7F08009DF69A /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		157C6BD821EF10D6009DF69A /* MenuStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuStruct.swift; sourceTree = "<group>"; };
+		15E9CABE21F1B5C900E4083B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		15E9CAC021F1B5E200E4083B /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
+		15E9CAC221F1B5F600E4083B /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		15E9CAC421F1B60200E4083B /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		15E9CAC621F1B61200E4083B /* ScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanViewController.swift; sourceTree = "<group>"; };
+		15E9CAC821F1B62800E4083B /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		15E9CACA21F1B65100E4083B /* CallCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CallCenter.swift; sourceTree = "<group>"; };
 		198C3D8C23702A67FCCC9B7D /* Pods-LabScan.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabScan.release.xcconfig"; path = "Pods/Target Support Files/Pods-LabScan/Pods-LabScan.release.xcconfig"; sourceTree = "<group>"; };
 		1ED66BA5DC29DDEAFCEEC9EB /* Pods_LabScanUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LabScanUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CB6CA2764AB804C5A970217 /* Pods-LabScanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LabScanTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LabScanTests/Pods-LabScanTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -192,6 +206,7 @@
 		157C6B7F21EC894B009DF69A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				15E9CABD21F1B59F00E4083B /* ViewFunction */,
 				157C6BBD21ED9E10009DF69A /* Share */,
 				157C6B8821EC89D6009DF69A /* Other */,
 				157C6B8421EC8987009DF69A /* Main */,
@@ -259,6 +274,7 @@
 				157C6BD621EE7F08009DF69A /* TestViewController.swift */,
 				157C6BD821EF10D6009DF69A /* MenuStruct.swift */,
 				150727B421F15ED000667D13 /* TestAppViewController.swift */,
+				15E9CACA21F1B65100E4083B /* CallCenter.swift */,
 			);
 			path = Share;
 			sourceTree = "<group>";
@@ -306,6 +322,19 @@
 				157C6BD221EE6FEF009DF69A /* Walthrough.png */,
 			);
 			path = Test;
+			sourceTree = "<group>";
+		};
+		15E9CABD21F1B59F00E4083B /* ViewFunction */ = {
+			isa = PBXGroup;
+			children = (
+				15E9CABE21F1B5C900E4083B /* SearchViewController.swift */,
+				15E9CAC021F1B5E200E4083B /* CategoryViewController.swift */,
+				15E9CAC221F1B5F600E4083B /* HistoryViewController.swift */,
+				15E9CAC421F1B60200E4083B /* ProfileViewController.swift */,
+				15E9CAC621F1B61200E4083B /* ScanViewController.swift */,
+				15E9CAC821F1B62800E4083B /* FavoriteViewController.swift */,
+			);
+			path = ViewFunction;
 			sourceTree = "<group>";
 		};
 		829F3CB613EEC940D734B2D7 /* Frameworks */ = {
@@ -612,16 +641,23 @@
 			files = (
 				157C6BD721EE7F08009DF69A /* TestViewController.swift in Sources */,
 				157C6B8321EC8971009DF69A /* MainIphoneViewController.swift in Sources */,
+				15E9CAC121F1B5E200E4083B /* CategoryViewController.swift in Sources */,
+				15E9CAC321F1B5F600E4083B /* HistoryViewController.swift in Sources */,
+				15E9CAC921F1B62800E4083B /* FavoriteViewController.swift in Sources */,
 				150727B521F15ED000667D13 /* TestAppViewController.swift in Sources */,
 				157C6B4A21EC5C39009DF69A /* ViewController.swift in Sources */,
+				15E9CAC521F1B60200E4083B /* ProfileViewController.swift in Sources */,
+				15E9CAC721F1B61200E4083B /* ScanViewController.swift in Sources */,
 				157C6BBF21ED9E25009DF69A /* MainConfig.swift in Sources */,
 				157C6BD321EE6FEF009DF69A /* WalkThroughCollectionViewCell.swift in Sources */,
 				157C6BCA21EE6ABD009DF69A /* MenuiPhoneCollectionViewCell.swift in Sources */,
 				157C6B8121EC8965009DF69A /* MainIpadViewController.swift in Sources */,
+				15E9CABF21F1B5C900E4083B /* SearchViewController.swift in Sources */,
 				157C6BD921EF10D6009DF69A /* MenuStruct.swift in Sources */,
 				157C6B4821EC5C39009DF69A /* AppDelegate.swift in Sources */,
 				157C6BCE21EE6BD7009DF69A /* UPCarouselFlowLayout.swift in Sources */,
 				157C6B5021EC5C39009DF69A /* LabScan.xcdatamodeld in Sources */,
+				15E9CACB21F1B65100E4083B /* CallCenter.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

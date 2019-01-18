@@ -12,6 +12,14 @@ class MainIphoneViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var menuPageCon: UIPageControl!
     @IBOutlet weak var menuCollection: UICollectionView!
     
+    @IBAction func profileAction(_ sender: Any) {
+    }
+    
+    @IBOutlet weak var SearchView: UIView!
+    @IBOutlet weak var FavoriteView: UIView!
+    
+
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +41,19 @@ class MainIphoneViewController: UIViewController, UICollectionViewDelegate, UICo
         
         menuCollection.delegate = self
         menuCollection.dataSource = self
+        
+        MainConfig.init().OnClick(tap: UITapGestureRecognizer(target: self, action: #selector(openSearch(_:))), view: SearchView)
+        
+        
 
+    }
+    
+    @objc func dismissByObject(_ sender:UITapGestureRecognizer?){
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    @objc func openSearch(_ sender:UITapGestureRecognizer?){
+        MainConfig().actionVCWithOutHero(this: self,viewController: MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().SearchViewController) as! SearchViewController)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -66,7 +86,7 @@ class MainIphoneViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
-        let size = data().count
+        let size = MainConfig().data().count
         
         self.menuPageCon.numberOfPages = size
         return size
@@ -76,7 +96,7 @@ class MainIphoneViewController: UIViewController, UICollectionViewDelegate, UICo
         
         let cell = menuCollection.dequeueReusableCell(withReuseIdentifier: "menuIphoneCell", for: indexPath) as! MenuiPhoneCollectionViewCell
         
-        let slot = data()[indexPath.row]
+        let slot = MainConfig().data()[indexPath.row]
         
         if(slot.imageBg != nil){
             cell.cellImageBg.image = slot.imageBg
@@ -106,12 +126,25 @@ class MainIphoneViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let slot = data()[indexPath.row]
+        let slot = MainConfig().data()[indexPath.row]
         
         //let storyboard = UIStoryboard(name: "AppStoryboard", bundle: nil)
         //let vc = storyboard.instantiateViewController(withIdentifier: "testAppVC") as! TestAppViewController
         
-        let vc = MainConfig().requireViewController(storyboard: "AppStoryboard", viewController: "testAppVC") as! TestAppViewController
+        if(indexPath.row == 0){
+             let vc = MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().ScanViewController) as! ScanViewController
+            MainConfig().actionVC(this: self, viewController: vc)
+        }else if(indexPath.row == 1){
+             let vc = MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().CategoryViewController) as! CategoryViewController
+            MainConfig().actionVC(this: self, viewController: vc)
+
+        }else if(indexPath.row == 2){
+             let vc = MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().HistoryViewController) as! HistoryViewController
+            MainConfig().actionVC(this: self, viewController: vc)
+
+        }
+        
+       
 
 
         //let vc = self.storyboard?.instantiateViewController(withIdentifier: "testVC") as! TestViewController
@@ -120,21 +153,28 @@ class MainIphoneViewController: UIViewController, UICollectionViewDelegate, UICo
         
         //vc.modalPresentationStyle = .popover
         
+        //vc.modalPresentationStyle = .pageSheet
+        //vc.modalTransitionStyle = .coverVertical
+        
         //let aObjNavi = UINavigationController(rootViewController: vc)
         //aObjNavi.modalPresentationStyle = UIModalPresentationStyle.formSheet
         //aObjNavi.modalTransitionStyle = UIModalTransitionStyle.coverVertical
         
         //self.hero.isEnabled = true
+        
+        //vc.bgColor = slot.color
+        
+        //vc.isHeroEnabled = true
+        //self.present(vc, animated: true, completion: nil)
+        
         //self.present(aObjNavi, animated: true, completion: nil)
-        
-        vc.bgColor = slot.color
-        
-        vc.isHeroEnabled = true
-        self.present(vc, animated: true, completion: nil)
+
 
         
         //print("itm selected == \(indexPath.row)")
     }
+    
+    
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         let layout = self.menuCollection.collectionViewLayout as! UPCarouselFlowLayout
@@ -177,19 +217,7 @@ class MainIphoneViewController: UIViewController, UICollectionViewDelegate, UICo
         return pageSize
     }
     
-    func data() -> [MenuStruct] {
-        
-        let menu = [
-            MenuStruct(imageBg: #imageLiteral(resourceName: "menu_wall_1_plus"), title: "สแกนอุปกรณ์", image: nil,color :nil,description :"เปิดกล้องเพื่อสแกน",colorLabel :UIColor.init(red: 77/255, green: 64/255, blue: 40/255, alpha: 1)),
-            MenuStruct(imageBg: nil, title: "หมวดหมู่", image: #imageLiteral(resourceName: "bookshelf"),color :UIColor.init(red: 186/255, green: 50/255, blue: 50/255, alpha: 1),description :"อุปกรณ์การทดลองวิทยาศาสตร์",colorLabel :UIColor.white),
-            MenuStruct(imageBg: nil, title: "ประวัติ", image: #imageLiteral(resourceName: "history-clock-button"),color :UIColor.init(red: 74/255, green: 54/255, blue: 202/255, alpha: 1),description :"การค้นหา",colorLabel: UIColor.white)
-
-            //MenuStruct(imageBg: #imageLiteral(resourceName: "menu_wall_1"), title: "สแกนอุปกรณ์", image: #imageLiteral(resourceName: "9"))
-
-        ]
-        
-        return menu
-    }
+    
     
     
 

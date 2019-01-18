@@ -21,27 +21,14 @@ class MenuiPhoneCollectionViewCell: UICollectionViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        cellView.hero.id = "TEST"
+        cellView.hero.id = "VIEW"
         
         //cellImageBg.isHidden = true
         
-        setStyle(viewLayer: cellView)
-        setStyleImage(viewLayer: cellImageBg)
+        cellView = MainConfig().setStyle(viewLayer: cellView)
+        cellImageBg = MainConfig().setStyleImage(viewLayer: cellImageBg)
     }
     
-    func setStyle(viewLayer :UIView) -> UIView {
-        viewLayer.layer.masksToBounds = false
-        viewLayer.layer.shadowOffset = CGSize(width: 0, height: 4)
-        viewLayer.layer.shadowRadius = 8
-        viewLayer.layer.shadowOpacity = 0.4
-        viewLayer.layer.cornerRadius = 16
-        return viewLayer
-    }
-    
-    func setStyleImage(viewLayer :UIImageView) -> UIImageView {
-        viewLayer.layer.masksToBounds = true
-        viewLayer.layer.cornerRadius = 16
-        return viewLayer
-    }
+   
 
 }
