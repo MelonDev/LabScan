@@ -22,6 +22,7 @@ class MenuiPhoneCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
         
         cellView.hero.id = "VIEW"
+        cellTitle.hero.id = "TITLE"
         
         //cellImageBg.isHidden = true
         

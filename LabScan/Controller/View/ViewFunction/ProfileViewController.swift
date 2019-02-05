@@ -10,11 +10,15 @@ import UIKit
 
 class ProfileViewController: UIViewController {
 
+    @IBAction func backAction(_ sender: Any) {
+        MainConfig.init().dismissAction(viewController: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let config = MainConfig()
-        config.initVC(viewController: self)
+        //config.initVC(viewController: self)
         // Do any additional setup after loading the view.
     }
     

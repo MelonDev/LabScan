@@ -10,13 +10,24 @@ import UIKit
 
 class ScanViewController: UIViewController {
 
+    @IBAction func backAction(_ sender: Any) {
+        MainConfig.init().dismissAction(viewController: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let config = MainConfig()
         config.initVC(viewController: self)
 
+
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        MainConfig.init().lightStatusBar(animated: animated)
     }
     
 

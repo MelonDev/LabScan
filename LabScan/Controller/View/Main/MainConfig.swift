@@ -65,6 +65,26 @@ class MainConfig {
         this.present(viewController,animated: true,completion: nil)
     }
     
+    func actionNavVC(this :UIViewController , viewController :UIViewController){
+        viewController.isHeroEnabled = true
+        
+        let aObjNavi = UINavigationController(rootViewController: viewController)
+        aObjNavi.modalPresentationStyle = UIModalPresentationStyle.formSheet
+        aObjNavi.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        
+        this.present(aObjNavi,animated: true,completion: nil)
+    }
+    
+    func actionNavVCWithOutHero(this :UIViewController , viewController :UIViewController){
+        let aObjNavi = UINavigationController(rootViewController: viewController)
+        aObjNavi.modalPresentationStyle = UIModalPresentationStyle.formSheet
+        aObjNavi.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        
+        
+        this.present(aObjNavi,animated: true,completion: nil)
+    }
+    
+    
     func RGBTOCOLOR(red :Int,green :Int,blue :Int,alpha :Int) -> UIColor {
         return UIColor.init(red: getColorFloat(number: red), green: getColorFloat(number: green), blue:getColorFloat(number: blue), alpha: getColorFloat(number: alpha))
     }
@@ -96,5 +116,14 @@ class MainConfig {
     
     func OnClick(tap :UITapGestureRecognizer,view :UIView){
         view.addGestureRecognizer(tap)
+    }
+    
+    func lightStatusBar(animated: Bool){
+            UIApplication.shared.setStatusBarStyle(.lightContent, animated: animated)
+        
+    }
+    
+    func darkStatusBar(animated: Bool){
+        UIApplication.shared.setStatusBarStyle(.default, animated: animated)
     }
 }

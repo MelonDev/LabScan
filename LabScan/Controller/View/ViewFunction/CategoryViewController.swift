@@ -7,16 +7,41 @@
 //
 
 import UIKit
+import Hero
 
 class CategoryViewController: UIViewController {
-
+  
+ 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var contentView: UIView!
+    
+    @IBAction func backAction(_ sender: Any) {
+        MainConfig.init().dismissAction(viewController: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let config = MainConfig()
         config.initVC(viewController: self)
-
+        
+        self.titleLabel.hero.id = "TITLE"
+        
+        let topView = UIView(frame:CGRect(x: 0,y: UIScreen.main.bounds.height - 50, width: UIScreen.main.bounds.width, height: 50))
+        topView.backgroundColor = UIColor.white
+        self.view.insertSubview(topView, at: 0)
+        
+        self.contentView.roundCorners(corners: [.topLeft, .topRight], radius: 20.0)
+       
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+         contentView.hero.modifiers = [.translate(y: UIScreen.main.bounds.height), .useGlobalCoordinateSpace]
+        
+        MainConfig.init().lightStatusBar(animated: animated)
     }
     
 

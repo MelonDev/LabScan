@@ -9,12 +9,18 @@
 import UIKit
 
 class FavoriteViewController: UIViewController {
-
+    
+    @IBAction func backAction(_ sender: Any) {
+        MainConfig.init().dismissAction(viewController: self)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         let config = MainConfig()
-        config.initVC(viewController: self)
+        if(config.isIpad()){
+            config.initVC(viewController: self)
+        }
         // Do any additional setup after loading the view.
     }
     

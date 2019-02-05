@@ -13,6 +13,7 @@ class MainIphoneViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var menuCollection: UICollectionView!
     
     @IBAction func profileAction(_ sender: Any) {
+        MainConfig.init().actionVCWithOutHero(this: self, viewController:MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().ProfileViewController) as! ProfileViewController)
     }
     
     @IBOutlet weak var SearchView: UIView!
@@ -44,6 +45,7 @@ class MainIphoneViewController: UIViewController, UICollectionViewDelegate, UICo
         
         MainConfig.init().OnClick(tap: UITapGestureRecognizer(target: self, action: #selector(openSearch(_:))), view: SearchView)
         
+        MainConfig.init().OnClick(tap: UITapGestureRecognizer(target: self, action: #selector(openFavorite(_:))), view: FavoriteView)
         
 
     }
@@ -56,8 +58,18 @@ class MainIphoneViewController: UIViewController, UICollectionViewDelegate, UICo
         MainConfig().actionVCWithOutHero(this: self,viewController: MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().SearchViewController) as! SearchViewController)
     }
     
+    @objc func openProfile(_ sender:UITapGestureRecognizer?){
+        MainConfig().actionVCWithOutHero(this: self,viewController: MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().ProfileViewController) as! ProfileViewController)
+    }
+    
+    @objc func openFavorite(_ sender:UITapGestureRecognizer?){
+        MainConfig().actionVCWithOutHero(this: self,viewController: MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().FavoriteViewController) as! FavoriteViewController)
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        MainConfig.init().darkStatusBar(animated: animated)
         
         //self.navigationController?.navigationBar.barTintColor = UIColor.white
         //self.navigationController?.navigationBar.prefersLargeTitles = true
