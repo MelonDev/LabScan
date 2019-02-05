@@ -97,7 +97,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A6S-Nb-yxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1900" y="919.79010494752629"/>
+            <point key="canvasLocation" x="2810.144927536232" y="919.41964285714278"/>
         </scene>
         <!--หมวดหมู่-->
         <scene sceneID="pm8-Pr-6b7">
@@ -168,7 +168,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g2O-NU-KzA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1040.8" y="919.79010494752629"/>
+            <point key="canvasLocation" x="1950.7246376811595" y="919.41964285714278"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="CX0-XU-hSI">
@@ -248,55 +248,62 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="RmB-yq-LQy">
-                                <rect key="frame" x="0.0" y="44" width="414" height="50"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="yih-Y2-f1r">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K0Y-Xj-cga" customClass="PreviewView" customModule="LabScan" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                            </view>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shL-lj-56Z">
+                                <rect key="frame" x="75" y="762" width="264" height="70"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="idW-DL-vag">
+                                    <rect key="frame" x="0.0" y="0.0" width="264" height="70"/>
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="สแกน" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PDX-dg-WoA">
-                                            <rect key="frame" x="183.5" y="9" width="47" height="32"/>
-                                            <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="20"/>
-                                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="วิเคราะห์วัตถุ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ru5-cI-ZEY">
+                                            <rect key="frame" x="75" y="17.5" width="114" height="35"/>
+                                            <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="22"/>
+                                            <color key="textColor" white="0.0" alpha="0.59668425161160366" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kOd-oB-bRd">
-                                            <rect key="frame" x="16" y="5.5" width="63" height="39"/>
-                                            <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="17"/>
-                                            <state key="normal" title="ย้อนกลับ">
-                                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                            </state>
-                                            <connections>
-                                                <action selector="backAction:" destination="2Rk-8E-XtR" eventType="touchUpInside" id="dMH-UJ-YB2"/>
-                                            </connections>
-                                        </button>
                                     </subviews>
-                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <constraints>
-                                        <constraint firstItem="PDX-dg-WoA" firstAttribute="centerX" secondItem="yih-Y2-f1r" secondAttribute="centerX" id="hNq-Q4-6zq"/>
-                                        <constraint firstItem="PDX-dg-WoA" firstAttribute="centerY" secondItem="yih-Y2-f1r" secondAttribute="centerY" id="m3G-aa-Dok"/>
-                                        <constraint firstItem="kOd-oB-bRd" firstAttribute="centerY" secondItem="yih-Y2-f1r" secondAttribute="centerY" id="nKU-bI-pyh"/>
-                                        <constraint firstItem="kOd-oB-bRd" firstAttribute="leading" secondItem="yih-Y2-f1r" secondAttribute="leading" constant="16" id="pXG-eM-jBe"/>
+                                        <constraint firstItem="Ru5-cI-ZEY" firstAttribute="centerX" secondItem="idW-DL-vag" secondAttribute="centerX" id="MVp-3I-JBz"/>
+                                        <constraint firstItem="Ru5-cI-ZEY" firstAttribute="centerY" secondItem="idW-DL-vag" secondAttribute="centerY" id="gc5-mQ-zJI"/>
                                     </constraints>
                                 </view>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="15y-h2-IcQ"/>
+                                    <constraint firstAttribute="height" constant="70" id="8wh-PZ-EQQ"/>
+                                    <constraint firstAttribute="width" secondItem="Ru5-cI-ZEY" secondAttribute="width" constant="150" id="ITq-NK-JQ7"/>
                                 </constraints>
                                 <blurEffect style="light"/>
                             </visualEffectView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RmB-yq-LQy" firstAttribute="trailing" secondItem="YLS-9T-8tl" secondAttribute="trailing" id="gre-qC-jfo"/>
-                            <constraint firstItem="RmB-yq-LQy" firstAttribute="leading" secondItem="YLS-9T-8tl" secondAttribute="leading" id="k1d-Qc-RLG"/>
-                            <constraint firstItem="RmB-yq-LQy" firstAttribute="top" secondItem="YLS-9T-8tl" secondAttribute="top" id="qaQ-w4-BbN"/>
+                            <constraint firstItem="shL-lj-56Z" firstAttribute="centerX" secondItem="YLS-9T-8tl" secondAttribute="centerX" id="PGZ-Cz-LbB"/>
+                            <constraint firstItem="YLS-9T-8tl" firstAttribute="trailing" secondItem="K0Y-Xj-cga" secondAttribute="trailing" id="TmM-91-5ZA"/>
+                            <constraint firstItem="YLS-9T-8tl" firstAttribute="bottom" secondItem="K0Y-Xj-cga" secondAttribute="bottom" id="b7U-52-25D"/>
+                            <constraint firstItem="K0Y-Xj-cga" firstAttribute="leading" secondItem="YLS-9T-8tl" secondAttribute="leading" id="d74-ju-KAP"/>
+                            <constraint firstItem="YLS-9T-8tl" firstAttribute="bottom" secondItem="shL-lj-56Z" secondAttribute="bottom" constant="30" id="f5C-pv-O2v"/>
+                            <constraint firstItem="K0Y-Xj-cga" firstAttribute="top" secondItem="YLS-9T-8tl" secondAttribute="top" id="wtv-sS-NJP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YLS-9T-8tl"/>
                     </view>
+                    <navigationItem key="navigationItem" id="NXo-6m-bOX">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="5lR-hi-KYp">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="cancelAction:" destination="2Rk-8E-XtR" id="qgA-UC-4qA"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="ViewVEV" destination="idW-DL-vag" id="eKz-71-3wp"/>
+                        <outlet property="previewView" destination="K0Y-Xj-cga" id="V1a-ii-4Yz"/>
+                        <outlet property="shotVEV" destination="shL-lj-56Z" id="FL8-Oh-thD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NwW-GE-yT5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="103" y="919"/>
+            <point key="canvasLocation" x="1013.0434782608696" y="918.75"/>
         </scene>
         <!--Profile View Controller-->
         <scene sceneID="JYr-Hq-aFK">
@@ -352,7 +359,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lsa-Da-x7s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2767.1999999999998" y="919.79010494752629"/>
+            <point key="canvasLocation" x="3676.811594202899" y="919.41964285714278"/>
         </scene>
         <!--Test App View Controller-->
         <scene sceneID="T9Y-d3-3RY">
@@ -454,6 +461,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c2V-49-3pQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1828" y="1637"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="iXi-aS-U27">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xG7-PR-vmq" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="jXl-68-0Md">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="19"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </textAttributes>
+                        <textAttributes key="largeTitleTextAttributes">
+                            <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="19"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2Rk-8E-XtR" kind="relationship" relationship="rootViewController" id="mCA-Tn-moP"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XEQ-SE-KKU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="102.89855072463769" y="918.75"/>
         </scene>
     </scenes>
 </document>

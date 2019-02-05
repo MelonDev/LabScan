@@ -33,6 +33,8 @@
 		157C6BD521EE6FEF009DF69A /* Walthrough.png in Resources */ = {isa = PBXBuildFile; fileRef = 157C6BD221EE6FEF009DF69A /* Walthrough.png */; };
 		157C6BD721EE7F08009DF69A /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C6BD621EE7F08009DF69A /* TestViewController.swift */; };
 		157C6BD921EF10D6009DF69A /* MenuStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C6BD821EF10D6009DF69A /* MenuStruct.swift */; };
+		1580AFCB2209324E0052CBBF /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580AFCA2209324E0052CBBF /* PreviewView.swift */; };
+		1580AFE5220963210052CBBF /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1580AFE4220963210052CBBF /* Inceptionv3.mlmodel */; };
 		15E9CABF21F1B5C900E4083B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9CABE21F1B5C900E4083B /* SearchViewController.swift */; };
 		15E9CAC121F1B5E200E4083B /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9CAC021F1B5E200E4083B /* CategoryViewController.swift */; };
 		15E9CAC321F1B5F600E4083B /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9CAC221F1B5F600E4083B /* HistoryViewController.swift */; };
@@ -93,6 +95,8 @@
 		157C6BD221EE6FEF009DF69A /* Walthrough.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Walthrough.png; sourceTree = "<group>"; };
 		157C6BD621EE7F08009DF69A /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		157C6BD821EF10D6009DF69A /* MenuStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuStruct.swift; sourceTree = "<group>"; };
+		1580AFCA2209324E0052CBBF /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
+		1580AFE4220963210052CBBF /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 		15E9CABE21F1B5C900E4083B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		15E9CAC021F1B5E200E4083B /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		15E9CAC221F1B5F600E4083B /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -164,6 +168,7 @@
 		157C6B4621EC5C39009DF69A /* LabScan */ = {
 			isa = PBXGroup;
 			children = (
+				1580AFE4220963210052CBBF /* Inceptionv3.mlmodel */,
 				157C6BC721EE6A90009DF69A /* Cell */,
 				157C6BC021EDB4A5009DF69A /* Resource */,
 				157C6B8521EC899F009DF69A /* Storyboard */,
@@ -275,6 +280,7 @@
 				157C6BD821EF10D6009DF69A /* MenuStruct.swift */,
 				150727B421F15ED000667D13 /* TestAppViewController.swift */,
 				15E9CACA21F1B65100E4083B /* CallCenter.swift */,
+				1580AFCA2209324E0052CBBF /* PreviewView.swift */,
 			);
 			path = Share;
 			sourceTree = "<group>";
@@ -427,6 +433,9 @@
 		157C6B3C21EC5C39009DF69A /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				KnownAssetTags = (
+					New,
+				);
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Android;
@@ -641,6 +650,7 @@
 			files = (
 				157C6BD721EE7F08009DF69A /* TestViewController.swift in Sources */,
 				157C6B8321EC8971009DF69A /* MainIphoneViewController.swift in Sources */,
+				1580AFCB2209324E0052CBBF /* PreviewView.swift in Sources */,
 				15E9CAC121F1B5E200E4083B /* CategoryViewController.swift in Sources */,
 				15E9CAC321F1B5F600E4083B /* HistoryViewController.swift in Sources */,
 				15E9CAC921F1B62800E4083B /* FavoriteViewController.swift in Sources */,
@@ -651,6 +661,7 @@
 				157C6BBF21ED9E25009DF69A /* MainConfig.swift in Sources */,
 				157C6BD321EE6FEF009DF69A /* WalkThroughCollectionViewCell.swift in Sources */,
 				157C6BCA21EE6ABD009DF69A /* MenuiPhoneCollectionViewCell.swift in Sources */,
+				1580AFE5220963210052CBBF /* Inceptionv3.mlmodel in Sources */,
 				157C6B8121EC8965009DF69A /* MainIpadViewController.swift in Sources */,
 				15E9CABF21F1B5C900E4083B /* SearchViewController.swift in Sources */,
 				157C6BD921EF10D6009DF69A /* MenuStruct.swift in Sources */,

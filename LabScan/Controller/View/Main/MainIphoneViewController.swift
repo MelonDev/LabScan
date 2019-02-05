@@ -138,14 +138,14 @@ class MainIphoneViewController: UIViewController, UICollectionViewDelegate, UICo
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-        let slot = MainConfig().data()[indexPath.row]
+        //let slot = MainConfig().data()[indexPath.row]
         
         //let storyboard = UIStoryboard(name: "AppStoryboard", bundle: nil)
         //let vc = storyboard.instantiateViewController(withIdentifier: "testAppVC") as! TestAppViewController
         
         if(indexPath.row == 0){
              let vc = MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().ScanViewController) as! ScanViewController
-            MainConfig().actionVC(this: self, viewController: vc)
+            MainConfig().actionNavVC(this: self, viewController: vc)
         }else if(indexPath.row == 1){
              let vc = MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().CategoryViewController) as! CategoryViewController
             MainConfig().actionVC(this: self, viewController: vc)
