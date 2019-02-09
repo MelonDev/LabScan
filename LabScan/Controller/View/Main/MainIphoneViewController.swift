@@ -12,6 +12,9 @@ class MainIphoneViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var menuPageCon: UIPageControl!
     @IBOutlet weak var menuCollection: UICollectionView!
     
+    let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+    
+    
     @IBAction func profileAction(_ sender: Any) {
         MainConfig.init().actionVCWithOutHero(this: self, viewController:MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().ProfileViewController) as! ProfileViewController)
     }
@@ -19,23 +22,34 @@ class MainIphoneViewController: UIViewController, UICollectionViewDelegate, UICo
     @IBOutlet weak var SearchView: UIView!
     @IBOutlet weak var FavoriteView: UIView!
     
-
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         menuCollection.register(UINib.init(nibName: "MenuiPhoneCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "menuIphoneCell")
         
         let floawLayout = UPCarouselFlowLayout()
-        floawLayout.itemSize = CGSize(width: UIScreen.main.bounds.size.width - 70.0, height: menuCollection.frame.size.height + (((UIScreen.main.bounds.size.width / menuCollection.frame.size.height)*100) * (UIScreen.main.bounds.size.width / menuCollection.frame.size.height) ))
+        
+        
+        if(UIDevice.isNotch){
+            floawLayout.itemSize = CGSize(width: UIScreen.main.bounds.size.width - 70.0, height: menuCollection.frame.size.height + (((UIScreen.main.bounds.size.width / menuCollection.frame.size.height)*110) * (UIScreen.main.bounds.size.width / menuCollection.frame.size.height) ))
+        }else {
+            floawLayout.itemSize = CGSize(width: UIScreen.main.bounds.size.width - 70.0, height: menuCollection.frame.size.height + (((UIScreen.main.bounds.size.width / menuCollection.frame.size.height)*100) * (UIScreen.main.bounds.size.width / menuCollection.frame.size.height) ))
+        }
+        
+        
+        
         
         //print(menuCollection.frame.size.height)
-    //print(UIScreen.main.bounds.size.width)
+        //print(UIScreen.main.bounds.size.width)
         //print()
         floawLayout.scrollDirection = .horizontal
-        floawLayout.sideItemScale = 0.8
+        floawLayout.sideItemScale = 0.7
         floawLayout.sideItemAlpha = 0.6
+        floawLayout.sideItemShift = 0.0
         floawLayout.spacingMode = .fixed(spacing: 5.0)
         //floawLayout.spacingMode = .overlap(visibleOffset: 5.0)
         menuCollection.collectionViewLayout = floawLayout
@@ -47,7 +61,7 @@ class MainIphoneViewController: UIViewController, UICollectionViewDelegate, UICo
         
         MainConfig.init().OnClick(tap: UITapGestureRecognizer(target: self, action: #selector(openFavorite(_:))), view: FavoriteView)
         
-
+        
     }
     
     @objc func dismissByObject(_ sender:UITapGestureRecognizer?){
@@ -79,16 +93,26 @@ class MainIphoneViewController: UIViewController, UICollectionViewDelegate, UICo
         
         
         //self.navigationItem.rightBarButtonItem = confirmAction
-
+        
         
         //self.viewInnerScroll.backgroundColor = UIColor.init(red: 239/255, green: 239/255, blue: 239/255, alpha: 255/255)
         self.view.backgroundColor = UIColor.init(red: 239/255, green: 239/255, blue: 239/255, alpha: 255/255)
         UIApplication.shared.setStatusBarStyle(.default, animated: animated)
-
+        
         
         //self.viewInnerScroll.backgroundColor = UIColor.white
-       
-
+        
+        
+    }
+    
+    func showLoadingDialog() {
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.gray
+        loadingIndicator.startAnimating();
+        
+        alert.view.addSubview(loadingIndicator)
+        present(alert, animated: true, completion: nil)
     }
     
     @objc func confirmTapped(sender: AnyObject) {
@@ -144,21 +168,22 @@ class MainIphoneViewController: UIViewController, UICollectionViewDelegate, UICo
         //let vc = storyboard.instantiateViewController(withIdentifier: "testAppVC") as! TestAppViewController
         
         if(indexPath.row == 0){
-             let vc = MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().ScanViewController) as! ScanViewController
+            //showLoadingDialog()
+            let vc = MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().ScanViewController) as! ScanViewController
             MainConfig().actionNavVC(this: self, viewController: vc)
         }else if(indexPath.row == 1){
-             let vc = MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().CategoryViewController) as! CategoryViewController
+            let vc = MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().CategoryViewController) as! CategoryViewController
             MainConfig().actionVC(this: self, viewController: vc)
-
+            
         }else if(indexPath.row == 2){
-             let vc = MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().HistoryViewController) as! HistoryViewController
+            let vc = MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().HistoryViewController) as! HistoryViewController
             MainConfig().actionVC(this: self, viewController: vc)
-
+            
         }
         
-       
-
-
+        
+        
+        
         //let vc = self.storyboard?.instantiateViewController(withIdentifier: "testVC") as! TestViewController
         
         
@@ -180,8 +205,8 @@ class MainIphoneViewController: UIViewController, UICollectionViewDelegate, UICo
         //self.present(vc, animated: true, completion: nil)
         
         //self.present(aObjNavi, animated: true, completion: nil)
-
-
+        
+        
         
         //print("itm selected == \(indexPath.row)")
     }
@@ -232,15 +257,15 @@ class MainIphoneViewController: UIViewController, UICollectionViewDelegate, UICo
     
     
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }

@@ -13,9 +13,16 @@ import SceneKit
 import CoreML
 import Vision
 
-class ScanViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferDelegate {
-
+class ScanViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferDelegate{
+    
+    
+    @IBOutlet weak var collectMasterView: UIView!
     @IBOutlet weak var previewView: PreviewView!
+    @IBOutlet weak var mlSwitch: UISwitch!
+    
+    var slot :ArraySlice<VNClassificationObservation> = []
+    
+    
     
     let configuration = ARWorldTrackingConfiguration()
     let augmentedRealitySession = ARSession()
@@ -23,7 +30,8 @@ class ScanViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferD
     var time :Int = 0
     var swiML :Bool = true
     
-    let alert = UIAlertController(title: nil, message: "Please wait...", preferredStyle: .alert)
+    let alert = UIAlertController(title: nil, message: "กรุณารอสักครู่...", preferredStyle: .alert)
+    
     
     @IBAction func cancelAction(_ sender: Any) {
         MainConfig.init().dismissAction(viewController: self)
@@ -34,49 +42,102 @@ class ScanViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferD
     private let sessionQueue = DispatchQueue(label: "Camera Session Queue", attributes: [], target: nil)
     private var permissionGranted = false
     
-    @IBOutlet weak var shotVEV: UIVisualEffectView!
-    @IBOutlet weak var ViewVEV: UIView!
     //let captureSession = AVCaptureSession()
     //var previewLayer: CALayer!
     //var captureDevice :AVCaptureDevice!
     
+    @IBOutlet weak var ScanCollection: UICollectionView!
+    
+    
     var model: VNCoreMLModel?
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        //self.navigationItem.titleView?.hero.id = "TITLE"
+        
+        ScanCollection.register(UINib.init(nibName: "ScanVIewCell", bundle: nil), forCellWithReuseIdentifier: "ScanCVC")
+        
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        layout.sectionInset = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
+        layout.itemSize = CGSize(width: 250, height: ScanCollection.bounds.height)
+        layout.scrollDirection = .horizontal
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 15
+        ScanCollection.collectionViewLayout = layout
+        
+        ScanCollection.backgroundColor = UIColor.clear.withAlphaComponent(0)
+        
+        /*
+         let flowLayout = UPCarouselFlowLayout()
+         flowLayout.itemSize = CGSize(width: 200, height: ScanCollection.bounds.height)
+         flowLayout.scrollDirection = .horizontal
+         
+         flowLayout.sideItemScale = 1.0
+         flowLayout.sideItemAlpha = 1.0
+         flowLayout.sideItemShift = 0.0
+         flowLayout.spacingMode = .fixed(spacing: 0.0)
+         ScanCollection.collectionViewLayout = flowLayout
+         */
+        
+        
+        ScanCollection.delegate = self
+        ScanCollection.dataSource = self
+        
         startTimer()
+        
+        //showLoadingDialog()
         
         //print("Test3")
         //showLoadingDialog()
-
+        
         
         let config = MainConfig()
         config.initVC(viewController: self)
-
-        loadCameraView()
-        loadModel()
+        
+        self.loadCameraView()
+        self.loadModel()
+        
+        
+        /*
+         DispatchQueue.global(qos: .background).async {
+         //self.showLoadingDialog()
+         
+         self.loadModel()
+         
+         DispatchQueue.main.async {
+         
+         self.loadCameraView()
+         
+         
+         //self.stopLoadingDialog()
+         }
+         }
+         */
+        
+        
+        
         
         //let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         //let blurEffectView = UIVisualEffectView(effect: blurEffect)
         //blurEffectView.frame = view.bounds
         
         //self.view.insertSubview(blurEffectView, at: 1)
-
+        
         //self.navigationController?.navigationBar.barTintColor = UIColor.red
         self.navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
         self.navigationController?.navigationBar.tintColor = UIColor.blue
         self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
-
+        
         self.navigationItem.title = "สแกนอุปกรณ์"
         
-
-    
+        
+        
         ShotButtonSetup()
         
         //prepareCamera()
-
-
+        
+        
     }
     
     func startTimer() {
@@ -97,12 +158,18 @@ class ScanViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferD
     }
     
     @objc func loop() {
-        time += 1
-        if(swiML){
-            swiML = false
+        if(self.mlSwitch.isOn){
+            time += 1
+            if(swiML){
+                swiML = false
+            }else {
+                swiML = true
+            }
         }else {
-            swiML = true
+            swiML = false
         }
+        
+        
         //print(time)
         
     }
@@ -110,7 +177,7 @@ class ScanViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferD
     func ShotButtonSetup() {
         //shotVEV.layer.borderWidth = 2
         //shotVEV.layer.borderColor = UIColor.white.cgColor
-        shotVEV.roundCorner(corners: [.topLeft, .topRight ,.bottomLeft,.bottomRight], radius: 20)
+        //shotVEV.roundCorner(corners: [.topLeft, .topRight ,.bottomLeft,.bottomRight], radius: 20)
     }
     
     
@@ -122,6 +189,11 @@ class ScanViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferD
         
         alert.view.addSubview(loadingIndicator)
         present(alert, animated: true, completion: nil)
+    }
+    
+    func stopLoadingDialog() {
+        MainConfig.init().dismissAction(viewController: alert)
+        
     }
     
     func dismissLoadingDialog() {
@@ -152,7 +224,7 @@ class ScanViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferD
         //self.previewView.videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         //self.previewView.session = session
         
-        self.previewView.isHidden = true
+        self.previewView.isHidden = false
         
         let preview = PreviewView(frame:CGRect(x: 0,y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
         preview.backgroundColor = UIColor.white
@@ -232,18 +304,18 @@ class ScanViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferD
         guard let pixelBuffer: CVPixelBuffer = CMSampleBufferGetImageBuffer(sampleBuffer) else { return }
         
         
-    
-        if(model != nil){
         
+        if(model != nil){
+            
             let request = VNCoreMLRequest(model: model!, completionHandler: { [weak self] request, error in
-            //processClassifications(for: request, error: error)
-            
-            self!.processClassifications(for: request, error: error)
-            
-        })
+                //processClassifications(for: request, error: error)
+                
+                self!.processClassifications(for: request, error: error)
+                
+            })
             
             try? VNImageRequestHandler(cvPixelBuffer: pixelBuffer, options: [:]).perform([request])
-
+            
         }else {
             print("Not found Model")
         }
@@ -281,78 +353,142 @@ class ScanViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferD
             
             if(self.swiML){
                 self.swiML = false
-            
-            guard let results = request.results else {
-                //self.classLabel.text = "Unable to classify image.\n\(error!.localizedDescription)"
-                print("Unable to classify image.\n\(error!.localizedDescription)")
-                return
-            }
-            // The `results` will always be `VNClassificationObservation`s, as specified by the Core ML model in this project.
-            let classifications = results as! [VNClassificationObservation]
-            
-            //self.slot = classifications.prefix(5)
-            
-            if classifications.isEmpty {
-                print("Nothing recognized.")
-                //self.classLabel.text = "Nothing recognized."
-            } else {
-                // Display top classifications ranked by confidence in the UI.
-                let topClassifications = classifications.prefix(2)
-                
-                
-                let descriptions = topClassifications.map { classification in
-                    //Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".
-                    
-                    return String(format: "  (%.2f) %@", classification.confidence*100, classification.identifier)
-                    
-                    
-                }
-                
-                print(descriptions.joined(separator: "\n"))
-                
-                //self.classLabel.isHidden = true
-                //self.classLabel.text =  descriptions.joined(separator: "\n")
-            }
-            
-            
-            
-            /*if let collectionView = self.collectionMainView {
-                collectionView.reloadData()
-            }
- 
-            if(!self.stopProcess){
-                
                 
                 guard let results = request.results else {
-                    self.classLabel.text = "Unable to classify image.\n\(error!.localizedDescription)"
+                    //self.classLabel.text = "Unable to classify image.\n\(error!.localizedDescription)"
+                    print("Unable to classify image.\n\(error!.localizedDescription)")
                     return
                 }
                 // The `results` will always be `VNClassificationObservation`s, as specified by the Core ML model in this project.
                 let classifications = results as! [VNClassificationObservation]
                 
                 self.slot = classifications.prefix(5)
+                self.ScanCollection.reloadData()
+
                 
-                if classifications.isEmpty {
-                    self.classLabel.text = "Nothing recognized."
-                } else {
-                    // Display top classifications ranked by confidence in the UI.
-                    let topClassifications = classifications.prefix(2)
-                    
-                    
-                    let descriptions = topClassifications.map { classification in
-                        //Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".
-                        
-                        return String(format: "  (%.2f) %@", classification.confidence*100, classification.identifier)
-                        
-                        
-                    }
-                    self.classLabel.isHidden = true
-                    //self.classLabel.text =  descriptions.joined(separator: "\n")
-                }
-            }
- */
+                /*
+                 if classifications.isEmpty {
+                 print("Nothing recognized.")
+                 //self.classLabel.text = "Nothing recognized."
+                 } else {
+                 // Display top classifications ranked by confidence in the UI.
+                 let topClassifications = classifications.prefix(2)
+                 
+                 
+                 let descriptions = topClassifications.map { classification in
+                 //Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".
+                 
+                 return String(format: "  (%.2f) %@", classification.confidence*100, classification.identifier)
+                 
+                 
+                 
+                 
+                 
+                 }
+                 
+                 
+                 
+                 
+                 
+                 print(descriptions.joined(separator: "\n"))
+                 
+                 //self.classLabel.isHidden = true
+                 //self.classLabel.text =  descriptions.joined(separator: "\n")
+                 }
+                 */
+                
+                
+                /*if let collectionView = self.collectionMainView {
+                 collectionView.reloadData()
+                 }
+                 
+                 if(!self.stopProcess){
+                 
+                 
+                 guard let results = request.results else {
+                 self.classLabel.text = "Unable to classify image.\n\(error!.localizedDescription)"
+                 return
+                 }
+                 // The `results` will always be `VNClassificationObservation`s, as specified by the Core ML model in this project.
+                 let classifications = results as! [VNClassificationObservation]
+                 
+                 self.slot = classifications.prefix(5)
+                 
+                 if classifications.isEmpty {
+                 self.classLabel.text = "Nothing recognized."
+                 } else {
+                 // Display top classifications ranked by confidence in the UI.
+                 let topClassifications = classifications.prefix(2)
+                 
+                 
+                 let descriptions = topClassifications.map { classification in
+                 //Formats the classification for display; e.g. "(0.37) cliff, drop, drop-off".
+                 
+                 return String(format: "  (%.2f) %@", classification.confidence*100, classification.identifier)
+                 
+                 
+                 }
+                 self.classLabel.isHidden = true
+                 //self.classLabel.text =  descriptions.joined(separator: "\n")
+                 }
+                 }
+                 */
             }
         }
     }
-  
+    
+    
 }
+
+extension ScanViewController :UICollectionViewDelegate,UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        let arr = Array(slot)
+        var arrs :Array<String> = Array()
+        for i in arr {
+            if(i.confidence > 0.1){
+                arrs.append("ITEM")
+            }
+        }
+        
+        
+        if(arrs.count > 0){
+            self.collectMasterView.isHidden = false
+
+        }else {
+            self.collectMasterView.isHidden = true
+        }
+        
+        return arrs.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = ScanCollection.dequeueReusableCell(withReuseIdentifier: "ScanCVC", for: indexPath) as! ScanVIewCell
+        
+        var arr = Array(slot)
+        let fullName = arr[indexPath.row].identifier.characters.split{$0 == ","}.map(String.init)[0]
+
+        
+        cell.titleName.text = fullName
+        cell.percentage.text = String(format: "%.0f", arr[indexPath.row].confidence*100) + "%"
+        
+        return cell
+    }
+    
+    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize
+    {
+        let width  = (view.frame.width-20)/3
+        return CGSize(width: width, height: width)
+    }
+    
+    
+    
+}
+
+
+

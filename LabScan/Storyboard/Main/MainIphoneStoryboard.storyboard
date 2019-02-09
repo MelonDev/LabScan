@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2RG-IX-Sjs">
-    <device id="retina5_9" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -76,15 +76,15 @@
                                 <rect key="frame" x="0.0" y="468" width="320" height="56"/>
                                 <subviews>
                                     <pageControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="5" translatesAutoresizingMaskIntoConstraints="NO" id="GFP-8F-erB">
-                                        <rect key="frame" x="124.66666666666669" y="9.6666666666666856" width="71" height="37"/>
+                                        <rect key="frame" x="124.5" y="9.5" width="71" height="37"/>
                                         <color key="pageIndicatorTintColor" red="0.70588235294117641" green="0.70588235294117641" blue="0.70588235294117641" alpha="0.69817529970000003" colorSpace="custom" customColorSpace="displayP3"/>
                                         <color key="currentPageIndicatorTintColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </pageControl>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TXs-F0-HHS" userLabel="SearchBtn">
-                                        <rect key="frame" x="32.666666666666664" y="0.0" width="55.999999999999993" height="56"/>
+                                        <rect key="frame" x="32.5" y="0.0" width="56" height="56"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ค้นหา" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="srJ-eV-F8k">
-                                                <rect key="frame" x="13.333333333333336" y="35" width="29" height="19"/>
+                                                <rect key="frame" x="13.5" y="35" width="29" height="19"/>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="12"/>
                                                 <color key="textColor" white="0.39903259195693552" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
@@ -107,9 +107,9 @@
                                         </constraints>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cau-XM-F5V" userLabel="FavoriteBtn">
-                                        <rect key="frame" x="231.66666666666663" y="0.0" width="56" height="56"/>
+                                        <rect key="frame" x="231.5" y="0.0" width="56" height="56"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ชื่นชอบ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3za-ct-lFZ">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ชื่นชอบ" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3za-ct-lFZ">
                                                 <rect key="frame" x="8" y="35" width="40" height="19"/>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="12"/>
                                                 <color key="textColor" white="0.39903259200000002" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

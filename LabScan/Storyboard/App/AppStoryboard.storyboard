@@ -250,39 +250,59 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K0Y-Xj-cga" customClass="PreviewView" customModule="LabScan" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88" width="414" height="774"/>
-                            </view>
-                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="shL-lj-56Z">
-                                <rect key="frame" x="75" y="762" width="264" height="70"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="idW-DL-vag">
-                                    <rect key="frame" x="0.0" y="0.0" width="264" height="70"/>
-                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                    <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="วิเคราะห์วัตถุ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ru5-cI-ZEY">
-                                            <rect key="frame" x="75" y="17.5" width="114" height="35"/>
-                                            <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="22"/>
-                                            <color key="textColor" white="0.0" alpha="0.59668425161160366" colorSpace="calibratedWhite"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
-                                    </subviews>
-                                    <constraints>
-                                        <constraint firstItem="Ru5-cI-ZEY" firstAttribute="centerX" secondItem="idW-DL-vag" secondAttribute="centerX" id="MVp-3I-JBz"/>
-                                        <constraint firstItem="Ru5-cI-ZEY" firstAttribute="centerY" secondItem="idW-DL-vag" secondAttribute="centerY" id="gc5-mQ-zJI"/>
-                                    </constraints>
-                                </view>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hTW-sA-8gf">
+                                        <rect key="frame" x="0.0" y="574" width="414" height="200"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ตรวจพบวัตถุ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ngf-o1-Q6p">
+                                                <rect key="frame" x="20" y="10" width="108.5" height="32"/>
+                                                <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="20"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <collectionView clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="ScanCV" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LZq-GD-WUe">
+                                                <rect key="frame" x="0.0" y="47" width="414" height="153"/>
+                                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GcD-ku-8uu">
+                                                    <size key="itemSize" width="208" height="135"/>
+                                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                </collectionViewFlowLayout>
+                                                <cells>
+                                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ScanCVCID" reuseIdentifier="ScanCVC" id="qaW-Va-XcP">
+                                                        <rect key="frame" x="0.0" y="9" width="208" height="135"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                            <rect key="frame" x="0.0" y="0.0" width="208" height="135"/>
+                                                            <autoresizingMask key="autoresizingMask"/>
+                                                        </view>
+                                                    </collectionViewCell>
+                                                </cells>
+                                            </collectionView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstItem="LZq-GD-WUe" firstAttribute="top" secondItem="Ngf-o1-Q6p" secondAttribute="bottom" constant="5" id="9mO-CI-MZZ"/>
+                                            <constraint firstItem="Ngf-o1-Q6p" firstAttribute="leading" secondItem="hTW-sA-8gf" secondAttribute="leading" constant="20" id="ElI-AO-NaV"/>
+                                            <constraint firstAttribute="trailing" secondItem="LZq-GD-WUe" secondAttribute="trailing" id="Lvt-gU-OOr"/>
+                                            <constraint firstAttribute="height" constant="200" id="WhA-Vu-FJa"/>
+                                            <constraint firstItem="Ngf-o1-Q6p" firstAttribute="top" secondItem="hTW-sA-8gf" secondAttribute="top" constant="10" id="dD2-y3-0cB"/>
+                                            <constraint firstAttribute="bottom" secondItem="LZq-GD-WUe" secondAttribute="bottom" id="kes-ni-dBA"/>
+                                            <constraint firstItem="LZq-GD-WUe" firstAttribute="leading" secondItem="hTW-sA-8gf" secondAttribute="leading" id="qvH-RH-OeP"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="8wh-PZ-EQQ"/>
-                                    <constraint firstAttribute="width" secondItem="Ru5-cI-ZEY" secondAttribute="width" constant="150" id="ITq-NK-JQ7"/>
+                                    <constraint firstAttribute="bottom" secondItem="hTW-sA-8gf" secondAttribute="bottom" id="IJn-28-TfW"/>
+                                    <constraint firstAttribute="trailing" secondItem="hTW-sA-8gf" secondAttribute="trailing" id="q3W-0G-Sts"/>
+                                    <constraint firstItem="hTW-sA-8gf" firstAttribute="leading" secondItem="K0Y-Xj-cga" secondAttribute="leading" id="ynP-Ml-onr"/>
                                 </constraints>
-                                <blurEffect style="light"/>
-                            </visualEffectView>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="shL-lj-56Z" firstAttribute="centerX" secondItem="YLS-9T-8tl" secondAttribute="centerX" id="PGZ-Cz-LbB"/>
                             <constraint firstItem="YLS-9T-8tl" firstAttribute="trailing" secondItem="K0Y-Xj-cga" secondAttribute="trailing" id="TmM-91-5ZA"/>
                             <constraint firstItem="YLS-9T-8tl" firstAttribute="bottom" secondItem="K0Y-Xj-cga" secondAttribute="bottom" id="b7U-52-25D"/>
                             <constraint firstItem="K0Y-Xj-cga" firstAttribute="leading" secondItem="YLS-9T-8tl" secondAttribute="leading" id="d74-ju-KAP"/>
-                            <constraint firstItem="YLS-9T-8tl" firstAttribute="bottom" secondItem="shL-lj-56Z" secondAttribute="bottom" constant="30" id="f5C-pv-O2v"/>
                             <constraint firstItem="K0Y-Xj-cga" firstAttribute="top" secondItem="YLS-9T-8tl" secondAttribute="top" id="wtv-sS-NJP"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="YLS-9T-8tl"/>
@@ -294,11 +314,18 @@
                                 <action selector="cancelAction:" destination="2Rk-8E-XtR" id="qgA-UC-4qA"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="jMy-Bv-duW">
+                            <switch key="customView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="RF4-bu-Xqe">
+                                <rect key="frame" x="343" y="6.5" width="51" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </switch>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="ViewVEV" destination="idW-DL-vag" id="eKz-71-3wp"/>
+                        <outlet property="ScanCollection" destination="LZq-GD-WUe" id="heC-59-Qpu"/>
+                        <outlet property="collectMasterView" destination="hTW-sA-8gf" id="HJa-0j-NmJ"/>
+                        <outlet property="mlSwitch" destination="RF4-bu-Xqe" id="hoe-od-xWk"/>
                         <outlet property="previewView" destination="K0Y-Xj-cga" id="V1a-ii-4Yz"/>
-                        <outlet property="shotVEV" destination="shL-lj-56Z" id="FL8-Oh-thD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NwW-GE-yT5" userLabel="First Responder" sceneMemberID="firstResponder"/>

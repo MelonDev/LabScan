@@ -28,6 +28,21 @@ class MainConfig {
         return viewLayer
     }
     
+    func setStyleWithOutShadow(viewLayer :UIView,cornerRadius :Float) -> UIView {
+        viewLayer.layer.masksToBounds = false
+        viewLayer.layer.cornerRadius = CGFloat(cornerRadius)
+        return viewLayer
+    }
+    
+    func setStyle(viewLayer :UIView,shadowRadius :Float,shadowOpacity :Float,cornerRadius :Float) -> UIView {
+        viewLayer.layer.masksToBounds = false
+        viewLayer.layer.shadowOffset = CGSize(width: 0, height: 4)
+        viewLayer.layer.shadowRadius = 8
+        viewLayer.layer.shadowOpacity = 0.4
+        viewLayer.layer.cornerRadius = 16
+        return viewLayer
+    }
+    
     func setStyleImage(viewLayer :UIImageView) -> UIImageView {
         viewLayer.layer.masksToBounds = true
         viewLayer.layer.cornerRadius = 16
@@ -42,18 +57,37 @@ class MainConfig {
     
     func data() -> [MenuStruct] {
         
-        let menu = [
-            
-            MenuStruct(imageBg: #imageLiteral(resourceName: "menu_wall_1_plus"), title: "สแกนอุปกรณ์", image: nil,color :nil,description :"เปิดกล้องเพื่อสแกน",colorLabel :UIColor.init(red: 77/255, green: 64/255, blue: 40/255, alpha: 1)),
-            MenuStruct(imageBg: nil, title: "หมวดหมู่", image: #imageLiteral(resourceName: "bookshelf"),color :RGBTOCOLOR(red: 186, green: 50, blue: 50, alpha: 255),description :"อุปกรณ์การทดลองวิทยาศาสตร์",colorLabel :UIColor.white),
-            MenuStruct(imageBg: nil, title: "ประวัติ", image: #imageLiteral(resourceName: "history-clock-button"),color :RGBTOCOLOR(red: 74, green: 54, blue: 202, alpha: 255),description :"การค้นหา",colorLabel: UIColor.white)
-            //MenuStruct(imageBg: #imageLiteral(resourceName: "menu_wall_1"), title: "สแกนอุปกรณ์", image: #imageLiteral(resourceName: "9"))
-            
-        ]
         
         
+        if(UIDevice.isNotch){
+            let menu = [
                 
-        return menu
+                MenuStruct(imageBg: #imageLiteral(resourceName: "menu_wall_3"), title: "สแกนอุปกรณ์", image: nil,color :nil,description :"เปิดกล้องเพื่อสแกน",colorLabel :UIColor.init(red: 77/255, green: 64/255, blue: 40/255, alpha: 1)),
+                MenuStruct(imageBg: nil, title: "หมวดหมู่", image: #imageLiteral(resourceName: "bookshelf"),color :RGBTOCOLOR(red: 186, green: 50, blue: 50, alpha: 255),description :"อุปกรณ์การทดลองวิทยาศาสตร์",colorLabel :UIColor.white),
+                MenuStruct(imageBg: nil, title: "ประวัติ", image: #imageLiteral(resourceName: "history-clock-button"),color :RGBTOCOLOR(red: 74, green: 54, blue: 202, alpha: 255),description :"การค้นหา",colorLabel: UIColor.white)
+                //MenuStruct(imageBg: #imageLiteral(resourceName: "menu_wall_1"), title: "สแกนอุปกรณ์", image: #imageLiteral(resourceName: "9"))
+                
+            ]
+            
+            return menu
+        }else {
+            
+            let menu = [
+                
+                MenuStruct(imageBg: #imageLiteral(resourceName: "menu_wall_1_plus"), title: "สแกนอุปกรณ์", image: nil,color :nil,description :"เปิดกล้องเพื่อสแกน",colorLabel :UIColor.init(red: 77/255, green: 64/255, blue: 40/255, alpha: 1)),
+                MenuStruct(imageBg: nil, title: "หมวดหมู่", image: #imageLiteral(resourceName: "bookshelf"),color :RGBTOCOLOR(red: 186, green: 50, blue: 50, alpha: 255),description :"อุปกรณ์การทดลองวิทยาศาสตร์",colorLabel :UIColor.white),
+                MenuStruct(imageBg: nil, title: "ประวัติ", image: #imageLiteral(resourceName: "history-clock-button"),color :RGBTOCOLOR(red: 74, green: 54, blue: 202, alpha: 255),description :"การค้นหา",colorLabel: UIColor.white)
+                //MenuStruct(imageBg: #imageLiteral(resourceName: "menu_wall_1"), title: "สแกนอุปกรณ์", image: #imageLiteral(resourceName: "9"))
+                
+            ]
+            
+            return menu
+
+        }
+        
+        
+        
+        //return menu
     }
     
     func actionVC(this :UIViewController , viewController :UIViewController){
@@ -109,7 +143,7 @@ class MainConfig {
     
     func dismissAction(viewController :UIViewController){
         viewController.dismiss(animated: true, completion: nil)
-
+        
     }
     
     
@@ -119,7 +153,7 @@ class MainConfig {
     }
     
     func lightStatusBar(animated: Bool){
-            UIApplication.shared.setStatusBarStyle(.lightContent, animated: animated)
+        UIApplication.shared.setStatusBarStyle(.lightContent, animated: animated)
         
     }
     

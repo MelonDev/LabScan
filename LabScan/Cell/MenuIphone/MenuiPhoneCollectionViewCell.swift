@@ -28,6 +28,7 @@ class MenuiPhoneCollectionViewCell: UICollectionViewCell {
         
         cellView = MainConfig().setStyle(viewLayer: cellView)
         cellImageBg = MainConfig().setStyleImage(viewLayer: cellImageBg)
+        
     }
     
    

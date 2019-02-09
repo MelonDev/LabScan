@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SukhumvitSet.ttc">
+            <string>SukhumvitSet-Text</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ScanVIewCell" customModule="LabScan" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="244" height="180"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="244" height="180"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Tq6-kC-Rez">
+                        <rect key="frame" x="0.0" y="0.0" width="244" height="180"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cw5-pb-RYK">
+                                <rect key="frame" x="8" y="19" width="229" height="153"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="ep5-83-UnZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="229" height="153"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="titleName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ro9-Uq-Ws1">
+                                            <rect key="frame" x="13" y="14" width="83" height="32"/>
+                                            <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m9E-zj-Qik">
+                                            <rect key="frame" x="17" y="139" width="25" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="m9E-zj-Qik" firstAttribute="leading" secondItem="ep5-83-UnZ" secondAttribute="leading" constant="17" id="Haq-HK-tkz"/>
+                                        <constraint firstItem="Ro9-Uq-Ws1" firstAttribute="leading" secondItem="ep5-83-UnZ" secondAttribute="leading" constant="13" id="Rh7-kG-RaT"/>
+                                        <constraint firstAttribute="bottom" secondItem="m9E-zj-Qik" secondAttribute="bottom" constant="20" id="f4K-Ye-ULl"/>
+                                        <constraint firstItem="Ro9-Uq-Ws1" firstAttribute="top" secondItem="ep5-83-UnZ" secondAttribute="top" constant="14" id="yWJ-xq-rTe"/>
+                                    </constraints>
+                                </view>
+                                <blurEffect style="extraLight"/>
+                            </visualEffectView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="cw5-pb-RYK" firstAttribute="leading" secondItem="Tq6-kC-Rez" secondAttribute="leading" id="Bha-1q-8cQ"/>
+                            <constraint firstItem="cw5-pb-RYK" firstAttribute="top" secondItem="Tq6-kC-Rez" secondAttribute="top" id="Qtb-Ll-zB9"/>
+                            <constraint firstAttribute="trailing" secondItem="cw5-pb-RYK" secondAttribute="trailing" id="gCM-VD-7IG"/>
+                            <constraint firstAttribute="bottom" secondItem="cw5-pb-RYK" secondAttribute="bottom" id="mVu-im-s25"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="Tq6-kC-Rez" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="9jb-D6-0fR"/>
+                <constraint firstItem="Tq6-kC-Rez" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="T5A-6w-fjD"/>
+                <constraint firstAttribute="bottom" secondItem="Tq6-kC-Rez" secondAttribute="bottom" id="rIX-4P-c5K"/>
+                <constraint firstAttribute="trailing" secondItem="Tq6-kC-Rez" secondAttribute="trailing" id="xzv-RS-ktP"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="244" height="180"/>
+            <connections>
+                <outlet property="cellView" destination="Tq6-kC-Rez" id="D1k-eD-Hoz"/>
+                <outlet property="percentage" destination="m9E-zj-Qik" id="lXB-Ik-DRS"/>
+                <outlet property="titleName" destination="Ro9-Uq-Ws1" id="NQ3-2u-fTD"/>
+                <outlet property="veView" destination="cw5-pb-RYK" id="4bv-Yr-z5E"/>
+            </connections>
+            <point key="canvasLocation" x="286.39999999999998" y="270.76461769115446"/>
+        </collectionViewCell>
+    </objects>
+</document>
