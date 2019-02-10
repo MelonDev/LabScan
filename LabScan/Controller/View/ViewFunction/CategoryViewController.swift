@@ -25,13 +25,29 @@ class CategoryViewController: UIViewController {
         let config = MainConfig()
         config.initVC(viewController: self)
         
-        self.titleLabel.hero.id = "TITLE"
+        if(MainConfig.init().isIpad()){
+            self.titleLabel.hero.id = "TITLE_C"
+        }else {
+            self.titleLabel.hero.id = "TITLE"
+        }
         
         let topView = UIView(frame:CGRect(x: 0,y: UIScreen.main.bounds.height - 50, width: UIScreen.main.bounds.width, height: 50))
         topView.backgroundColor = UIColor.white
         self.view.insertSubview(topView, at: 0)
         
-        self.contentView.roundCorners(corners: [.topLeft, .topRight], radius: 20.0)
+        /*
+        if(!MainConfig.init().isIpad()){
+            self.contentView.roundCorners(corners: [.topLeft, .topRight], radius: 20.0)
+        }
+ */
+        
+        
+        self.contentView.layer.cornerRadius = 20
+        self.contentView.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner] // Top right corner, Top left corner respectively
+
+        
+        //self.contentView.roundCorners(corners: [.topLeft, .topRight], radius: 20.0)
+
        
         // Do any additional setup after loading the view.
     }

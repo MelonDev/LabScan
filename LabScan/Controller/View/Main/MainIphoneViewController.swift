@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseDatabase
+
 
 class MainIphoneViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
     @IBOutlet weak var menuPageCon: UIPageControl!
@@ -27,7 +29,7 @@ class MainIphoneViewController: UIViewController, UICollectionViewDelegate, UICo
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+                
         
         menuCollection.register(UINib.init(nibName: "MenuiPhoneCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "menuIphoneCell")
         
@@ -40,6 +42,22 @@ class MainIphoneViewController: UIViewController, UICollectionViewDelegate, UICo
             floawLayout.itemSize = CGSize(width: UIScreen.main.bounds.size.width - 70.0, height: menuCollection.frame.size.height + (((UIScreen.main.bounds.size.width / menuCollection.frame.size.height)*100) * (UIScreen.main.bounds.size.width / menuCollection.frame.size.height) ))
         }
         
+        /*
+        let ref = Database.database().reference().child("lab").child("equipment").child("glass")
+        ref.observe(.value, with: {(snapshot) in
+            //var i = 0
+            //self.data["รายชื่อ"] = []
+            
+            if(snapshot.hasChildren()){
+                
+                let a = snapshot.childSnapshot(forPath: "Beaker").childSnapshot(forPath: "info")
+                let b = a.childSnapshot(forPath: "thai")
+                let value = b.value as! String
+                
+                print(value)
+            }
+        })
+ */
         
         
         
@@ -171,6 +189,9 @@ class MainIphoneViewController: UIViewController, UICollectionViewDelegate, UICo
             //showLoadingDialog()
             let vc = MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().ScanViewController) as! ScanViewController
             MainConfig().actionNavVC(this: self, viewController: vc)
+            /*let vc = MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().DetailViewController) as! DetailViewController
+            MainConfig().actionNavVC(this: self, viewController: vc)
+ */
         }else if(indexPath.row == 1){
             let vc = MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().CategoryViewController) as! CategoryViewController
             MainConfig().actionVC(this: self, viewController: vc)

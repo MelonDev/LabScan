@@ -35,7 +35,7 @@ class MainIpadViewController: UIViewController {
         historyView.hero.id = "NIL"
         bookView.hero.id = "NIL"
         
-        MainConfig().actionVC(this: self,viewController: MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().ScanViewController) as! ScanViewController)
+        MainConfig().actionNavVC(this: self,viewController: MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().ScanViewController) as! ScanViewController)
 
         //goToTest(color: UIColor.init(red: 77/255, green: 64/255, blue: 40/255, alpha: 1))
     }
@@ -77,12 +77,10 @@ class MainIpadViewController: UIViewController {
         self.favoriteView.layer.masksToBounds = false
         self.favoriteView.layer.cornerRadius = 20
         
-        
-
+     
 
         
     }
-    
    
 
     /*

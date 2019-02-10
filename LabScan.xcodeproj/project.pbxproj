@@ -9,6 +9,14 @@
 /* Begin PBXBuildFile section */
 		09AEC89662888B62797390C6 /* Pods_LabScanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED66BA5DC29DDEAFCEEC9EB /* Pods_LabScanUITests.framework */; };
 		150727B521F15ED000667D13 /* TestAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150727B421F15ED000667D13 /* TestAppViewController.swift */; };
+		152C5C5F22107AFB00811798 /* DetailDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152C5C5E22107AFB00811798 /* DetailDescription.swift */; };
+		152C5C6122107FF100811798 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152C5C6022107FF100811798 /* CustomNavigationBar.swift */; };
+		152C5C6322108D1100811798 /* DetailImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152C5C6222108D1100811798 /* DetailImage.swift */; };
+		152C5C6722108EC100811798 /* DetailImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152C5C6522108EC100811798 /* DetailImageCell.swift */; };
+		152C5C6822108EC100811798 /* DetailImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 152C5C6622108EC100811798 /* DetailImageCell.xib */; };
+		152CD244220F78D30011BCC0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152CD243220F78D30011BCC0 /* DetailViewController.swift */; };
+		152CD246221022840011BCC0 /* CustomUIscrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152CD245221022840011BCC0 /* CustomUIscrollView.swift */; };
+		152CD25722103E200011BCC0 /* TableDetailTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152CD25622103E200011BCC0 /* TableDetailTitle.swift */; };
 		157C6B4821EC5C39009DF69A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C6B4721EC5C39009DF69A /* AppDelegate.swift */; };
 		157C6B4A21EC5C39009DF69A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C6B4921EC5C39009DF69A /* ViewController.swift */; };
 		157C6B4D21EC5C39009DF69A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 157C6B4B21EC5C39009DF69A /* Main.storyboard */; };
@@ -70,6 +78,14 @@
 
 /* Begin PBXFileReference section */
 		150727B421F15ED000667D13 /* TestAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppViewController.swift; sourceTree = "<group>"; };
+		152C5C5E22107AFB00811798 /* DetailDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDescription.swift; sourceTree = "<group>"; };
+		152C5C6022107FF100811798 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
+		152C5C6222108D1100811798 /* DetailImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImage.swift; sourceTree = "<group>"; };
+		152C5C6522108EC100811798 /* DetailImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageCell.swift; sourceTree = "<group>"; };
+		152C5C6622108EC100811798 /* DetailImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailImageCell.xib; sourceTree = "<group>"; };
+		152CD243220F78D30011BCC0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		152CD245221022840011BCC0 /* CustomUIscrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIscrollView.swift; sourceTree = "<group>"; };
+		152CD25622103E200011BCC0 /* TableDetailTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDetailTitle.swift; sourceTree = "<group>"; };
 		157C6B4421EC5C39009DF69A /* LabScan.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LabScan.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		157C6B4721EC5C39009DF69A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		157C6B4921EC5C39009DF69A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -153,6 +169,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		152C5C6422108EA200811798 /* Collection */ = {
+			isa = PBXGroup;
+			children = (
+				152C5C6522108EC100811798 /* DetailImageCell.swift */,
+				152C5C6622108EC100811798 /* DetailImageCell.xib */,
+			);
+			path = Collection;
+			sourceTree = "<group>";
+		};
+		152CD24D221033B30011BCC0 /* DetailCell */ = {
+			isa = PBXGroup;
+			children = (
+				152C5C6422108EA200811798 /* Collection */,
+				152CD25622103E200011BCC0 /* TableDetailTitle.swift */,
+				152C5C5E22107AFB00811798 /* DetailDescription.swift */,
+				152C5C6222108D1100811798 /* DetailImage.swift */,
+			);
+			path = DetailCell;
+			sourceTree = "<group>";
+		};
 		157C6B3B21EC5C39009DF69A = {
 			isa = PBXGroup;
 			children = (
@@ -294,6 +330,8 @@
 				1580AFCA2209324E0052CBBF /* PreviewView.swift */,
 				15CFCBD2220D730F00F6696F /* CustomUIview.swift */,
 				15CFCBD4220D735600F6696F /* CustomUIdevice.swift */,
+				152CD245221022840011BCC0 /* CustomUIscrollView.swift */,
+				152C5C6022107FF100811798 /* CustomNavigationBar.swift */,
 			);
 			path = Share;
 			sourceTree = "<group>";
@@ -318,6 +356,7 @@
 		157C6BC721EE6A90009DF69A /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				152CD24D221033B30011BCC0 /* DetailCell */,
 				15CFCBD9220F083A00F6696F /* Scan */,
 				157C6BCF21EE6FBF009DF69A /* Test */,
 				157C6BCC21EE6AC7009DF69A /* MenuIphone */,
@@ -370,6 +409,7 @@
 				15E9CAC421F1B60200E4083B /* ProfileViewController.swift */,
 				15E9CAC621F1B61200E4083B /* ScanViewController.swift */,
 				15E9CAC821F1B62800E4083B /* FavoriteViewController.swift */,
+				152CD243220F78D30011BCC0 /* DetailViewController.swift */,
 			);
 			path = ViewFunction;
 			sourceTree = "<group>";
@@ -515,6 +555,7 @@
 				157C6BC621EDE218009DF69A /* AppStoryboard.storyboard in Resources */,
 				157C6B7D21EC8919009DF69A /* MainIpadStoryboard.storyboard in Resources */,
 				157C6BD521EE6FEF009DF69A /* Walthrough.png in Resources */,
+				152C5C6822108EC100811798 /* DetailImageCell.xib in Resources */,
 				157C6B5521EC5C3A009DF69A /* LaunchScreen.storyboard in Resources */,
 				157C6B7921EC81F6009DF69A /* GoogleService-Info.plist in Resources */,
 				157C6B5221EC5C3A009DF69A /* Assets.xcassets in Resources */,
@@ -685,6 +726,8 @@
 				15CFCBD5220D735600F6696F /* CustomUIdevice.swift in Sources */,
 				1580AFCB2209324E0052CBBF /* PreviewView.swift in Sources */,
 				15E9CAC121F1B5E200E4083B /* CategoryViewController.swift in Sources */,
+				152C5C5F22107AFB00811798 /* DetailDescription.swift in Sources */,
+				152C5C6722108EC100811798 /* DetailImageCell.swift in Sources */,
 				15CFCBE0220F094D00F6696F /* ScanVIewCell.swift in Sources */,
 				15E9CAC321F1B5F600E4083B /* HistoryViewController.swift in Sources */,
 				15CFCBD8220E1BFC00F6696F /* ScanCell.swift in Sources */,
@@ -693,6 +736,8 @@
 				157C6B4A21EC5C39009DF69A /* ViewController.swift in Sources */,
 				15E9CAC521F1B60200E4083B /* ProfileViewController.swift in Sources */,
 				15E9CAC721F1B61200E4083B /* ScanViewController.swift in Sources */,
+				152CD244220F78D30011BCC0 /* DetailViewController.swift in Sources */,
+				152CD25722103E200011BCC0 /* TableDetailTitle.swift in Sources */,
 				15CFCBD3220D730F00F6696F /* CustomUIview.swift in Sources */,
 				157C6BBF21ED9E25009DF69A /* MainConfig.swift in Sources */,
 				157C6BD321EE6FEF009DF69A /* WalkThroughCollectionViewCell.swift in Sources */,
@@ -701,8 +746,11 @@
 				157C6B8121EC8965009DF69A /* MainIpadViewController.swift in Sources */,
 				15E9CABF21F1B5C900E4083B /* SearchViewController.swift in Sources */,
 				157C6BD921EF10D6009DF69A /* MenuStruct.swift in Sources */,
+				152C5C6122107FF100811798 /* CustomNavigationBar.swift in Sources */,
+				152C5C6322108D1100811798 /* DetailImage.swift in Sources */,
 				157C6B4821EC5C39009DF69A /* AppDelegate.swift in Sources */,
 				157C6BCE21EE6BD7009DF69A /* UPCarouselFlowLayout.swift in Sources */,
+				152CD246221022840011BCC0 /* CustomUIscrollView.swift in Sources */,
 				157C6B5021EC5C39009DF69A /* LabScan.xcdatamodeld in Sources */,
 				15E9CACB21F1B65100E4083B /* CallCenter.swift in Sources */,
 			);

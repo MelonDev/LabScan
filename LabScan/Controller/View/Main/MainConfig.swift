@@ -103,10 +103,16 @@ class MainConfig {
         viewController.isHeroEnabled = true
         
         let aObjNavi = UINavigationController(rootViewController: viewController)
-        aObjNavi.modalPresentationStyle = UIModalPresentationStyle.formSheet
+        aObjNavi.modalPresentationStyle = UIModalPresentationStyle.fullScreen
         aObjNavi.modalTransitionStyle = UIModalTransitionStyle.coverVertical
         
         this.present(aObjNavi,animated: true,completion: nil)
+    }
+    
+    func setFormSheet(viewController :UIViewController) -> UIViewController{
+        viewController.modalPresentationStyle = UIModalPresentationStyle.formSheet
+        viewController.modalTransitionStyle = UIModalTransitionStyle.coverVertical
+        return viewController
     }
     
     func actionNavVCWithOutHero(this :UIViewController , viewController :UIViewController){
@@ -160,4 +166,5 @@ class MainConfig {
     func darkStatusBar(animated: Bool){
         UIApplication.shared.setStatusBarStyle(.default, animated: animated)
     }
+    
 }

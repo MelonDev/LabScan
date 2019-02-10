@@ -80,11 +80,15 @@ class ScanViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferD
          ScanCollection.collectionViewLayout = flowLayout
          */
         
+        self.loadCameraView()
+        self.loadModel()
+        
+        startTimer()
+        
         
         ScanCollection.delegate = self
         ScanCollection.dataSource = self
         
-        startTimer()
         
         //showLoadingDialog()
         
@@ -95,8 +99,6 @@ class ScanViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferD
         let config = MainConfig()
         config.initVC(viewController: self)
         
-        self.loadCameraView()
-        self.loadModel()
         
         
         /*
@@ -127,7 +129,11 @@ class ScanViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferD
         //self.navigationController?.navigationBar.barTintColor = UIColor.red
         self.navigationController?.navigationBar.barStyle = UIBarStyle.blackTranslucent
         self.navigationController?.navigationBar.tintColor = UIColor.blue
-        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        //self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.white]
+        
+        self.navigationController?.navigationBar.titleTextAttributes =
+            [NSAttributedString.Key.foregroundColor: UIColor.white,
+             NSAttributedString.Key.font: UIFont(name: "SukhumvitSet-Bold", size: 21)!]
         
         self.navigationItem.title = "สแกนอุปกรณ์"
         
@@ -205,16 +211,27 @@ class ScanViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferD
         //print("Test2")
     }
     
+    override func viewDidDisappear(_ animated: Bool) {
+        super.viewDidDisappear(animated)
+        
+        //stopTimer()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         //print("TEST")
+        
+        
+
         
         self.sessionQueue.async {
             self.session.startRunning()
             self.isSessionRunning = self.session.isRunning
             
         }
+        
+        self.navigationItem.largeTitleDisplayMode = .never
         
         MainConfig.init().lightStatusBar(animated: animated)
     }
@@ -227,7 +244,7 @@ class ScanViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferD
         self.previewView.isHidden = false
         
         let preview = PreviewView(frame:CGRect(x: 0,y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
-        preview.backgroundColor = UIColor.white
+        preview.backgroundColor = UIColor.black
         
         preview.videoPreviewLayer.videoGravity = AVLayerVideoGravity.resizeAspectFill
         preview.session = session
@@ -484,6 +501,17 @@ extension ScanViewController :UICollectionViewDelegate,UICollectionViewDataSourc
     {
         let width  = (view.frame.width-20)/3
         return CGSize(width: width, height: width)
+    }
+    
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+   
+            let vc = MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().DetailViewController) as! DetailViewController
+            MainConfig().actionNavVC(this: self, viewController: vc)
+        
+        
+        
     }
     
     

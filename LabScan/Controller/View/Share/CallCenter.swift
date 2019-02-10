@@ -27,4 +27,6 @@ class CallCenter {
     let ProfileViewController :String = "ProfileVC"
     let FavoriteViewController :String = "FavoriteVC"
     
+    let DetailViewController :String = "DetailVC"
+    
 }
