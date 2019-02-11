@@ -130,7 +130,7 @@ class DetailViewController: UIViewController {
             stopLoadingDialog()
         }
         
-        let ref = Database.database().reference().child("lab").child("equipment").child("glass")
+        let ref = Database.database().reference().child("lab").child("equipment").child("glass").child("group")
         //self.showLoadingDialog()
         
         ref.observe(.value, with: {(snapshot) in

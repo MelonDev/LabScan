@@ -7,8 +7,29 @@
 //
 
 import UIKit
+import FirebaseDatabase
 
-class HistoryViewController: UIViewController {
+class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
+    
+    @IBOutlet weak var tableView: UITableView!
+    var data = Array<String>()
+
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return data.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryTVC", for: indexPath) as! UITableViewCell
+        
+        cell.textLabel?.text = data[indexPath.row]
+        cell.textLabel?.font = UIFont(name:"Sukhumvit Set", size: 20.0)
+        
+        return cell
+    }
+    
+    
+    
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentView: UIView!
@@ -33,6 +54,52 @@ class HistoryViewController: UIViewController {
         let topView = UIView(frame:CGRect(x: 0,y: UIScreen.main.bounds.height - 50, width: UIScreen.main.bounds.width, height: 50))
         topView.backgroundColor = UIColor.white
         self.view.insertSubview(topView, at: 0)
+        
+        //tableView.separatorStyle = .none
+        tableView.delegate = self
+        tableView.dataSource = self
+        
+        let ref = Database.database().reference().child("history").child("chaiwiwat")
+        
+        ref.observe(.value, with: {(snapshot) in
+            //self.stopLoadingDialog()
+            if(snapshot.hasChildren()){
+                var i = 0
+                self.data = []
+                for child in snapshot.children {
+                    let snap = child as? DataSnapshot
+                    //let id = snap?.key as! String
+                    //print(id)
+                    
+                    let value = snap!.value as? NSDictionary
+                    let name = value?["name"] as? String ?? ""
+                    
+                    self.data.append(name)
+                    
+                    if(i == snapshot.childrenCount - 1){
+                        self.tableView.reloadData()
+                        
+                    }
+                    i+=1
+                    
+                    
+                    
+                }
+                
+                //self.engName.text = english
+                //self.desLabel.text = "\(des)\n\(des)\n\(des)\n\(des)"\
+                //self.desLabel.text = "     \(des)"
+                //self.setTextWithReload(label: self.desLabel, text: "     \(des)")
+                
+                //self.scrollView.updateContentView()
+                
+            }
+        })
+        
+        
+        
+        
+        
 
         /*
         if(!MainConfig.init().isIpad()){
@@ -55,6 +122,8 @@ class HistoryViewController: UIViewController {
         
         MainConfig.init().lightStatusBar(animated: animated)
     }
+    
+    
     
 
     /*

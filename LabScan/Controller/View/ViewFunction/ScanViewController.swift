@@ -12,6 +12,7 @@ import ARKit
 import SceneKit
 import CoreML
 import Vision
+import FirebaseDatabase
 
 class ScanViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferDelegate{
     
@@ -506,7 +507,26 @@ extension ScanViewController :UICollectionViewDelegate,UICollectionViewDataSourc
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
-   
+   /*
+        let dict = ["name": self.club,
+                    "date": self.date,
+                    "eventText": self.eventText,
+                    "free": self.free,
+                    "monthYear": self.monthYear
+        ]
+ */
+        
+        var arr = Array(slot)
+        let fullName = arr[indexPath.row].identifier.characters.split{$0 == ","}.map(String.init)[0]
+        
+        
+        let e = ["name": fullName]
+        let ref :DatabaseReference = Database.database().reference()
+        
+        let key = ref.childByAutoId().key
+
+        ref.child("history").child("chaiwiwat").child(key!).setValue(e)
+            
             let vc = MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().DetailViewController) as! DetailViewController
             MainConfig().actionNavVC(this: self, viewController: vc)
         
