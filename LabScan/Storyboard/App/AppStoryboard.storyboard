@@ -628,6 +628,68 @@
                                             <outlet property="collectionView" destination="40p-U3-rAj" id="be5-Mz-eLQ"/>
                                         </connections>
                                     </tableViewCell>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailCollectionTVC" rowHeight="248" id="Kco-ZR-V1I" customClass="DetailCollection" customModule="LabScan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="364" width="414" height="248"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Kco-ZR-V1I" id="pGm-hI-nIU">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="247.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FrJ-Od-veD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="247.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="อยู่ในชุด" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zy5-Uc-HQ1">
+                                                            <rect key="frame" x="20" y="10" width="79" height="42"/>
+                                                            <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="24"/>
+                                                            <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="e3U-zF-6fE">
+                                                            <rect key="frame" x="0.0" y="60" width="414" height="180"/>
+                                                            <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="180" id="QMj-io-8Kz"/>
+                                                            </constraints>
+                                                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Z4M-lr-AfE">
+                                                                <size key="itemSize" width="50" height="50"/>
+                                                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                            </collectionViewFlowLayout>
+                                                            <cells>
+                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CVCOLL" id="rWt-eg-fG2">
+                                                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                    <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                                                        <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                                                        <autoresizingMask key="autoresizingMask"/>
+                                                                    </view>
+                                                                </collectionViewCell>
+                                                            </cells>
+                                                        </collectionView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstItem="e3U-zF-6fE" firstAttribute="top" secondItem="Zy5-Uc-HQ1" secondAttribute="bottom" constant="8" id="GWW-46-SFi"/>
+                                                        <constraint firstAttribute="trailing" secondItem="e3U-zF-6fE" secondAttribute="trailing" id="TEJ-SF-83N"/>
+                                                        <constraint firstItem="Zy5-Uc-HQ1" firstAttribute="top" secondItem="FrJ-Od-veD" secondAttribute="top" constant="10" id="To0-jk-p1J"/>
+                                                        <constraint firstItem="e3U-zF-6fE" firstAttribute="leading" secondItem="FrJ-Od-veD" secondAttribute="leading" id="d8C-f0-cF6"/>
+                                                        <constraint firstItem="Zy5-Uc-HQ1" firstAttribute="leading" secondItem="FrJ-Od-veD" secondAttribute="leading" constant="20" id="pZX-Ol-7ea"/>
+                                                        <constraint firstAttribute="bottom" secondItem="e3U-zF-6fE" secondAttribute="bottom" constant="7.5" id="y3k-8P-FR9"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailing" secondItem="FrJ-Od-veD" secondAttribute="trailing" id="2uX-EQ-wWY"/>
+                                                <constraint firstItem="FrJ-Od-veD" firstAttribute="leading" secondItem="pGm-hI-nIU" secondAttribute="leading" id="FFD-JB-ebH"/>
+                                                <constraint firstItem="FrJ-Od-veD" firstAttribute="top" secondItem="pGm-hI-nIU" secondAttribute="top" id="HvP-Y3-JmJ"/>
+                                                <constraint firstAttribute="bottom" secondItem="FrJ-Od-veD" secondAttribute="bottom" id="y4e-3u-h2t"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="collectionView" destination="e3U-zF-6fE" id="idS-2M-zNZ"/>
+                                        </connections>
+                                    </tableViewCell>
                                 </prototypes>
                             </tableView>
                         </subviews>

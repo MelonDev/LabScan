@@ -59,6 +59,23 @@ class DetailViewController: UIViewController {
         
         self.navigationController?.setNavigationBarBorderColor(.clear)
         
+        let button = UIButton.init(type: .custom)
+        //let imageS = UIImage(named: "star.png")
+        
+        
+        button.setImage(UIImage(named: "star.png"), for: UIControl.State.normal)
+        button.addTarget(self, action: #selector(self.fvButtonPressed), for: UIControl.Event.touchUpInside)
+        //button.frame = CGRect(x: 0, y: 0, width: 1, height: 1)
+        button.widthAnchor.constraint(equalToConstant: 32.0).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 32.0).isActive = true
+        //button.frame.size = CGSize(width: 1, height: 1)
+        button.backgroundColor = UIColor.clear
+        button.imageView?.contentMode = .scaleAspectFit
+        
+        let barButton = UIBarButtonItem(customView: button)
+    
+        self.navigationItem.rightBarButtonItem = barButton
+        
         
         let cancelButton = UIBarButtonItem.init(title: "ย้อนกลับ", style: .plain, target: self, action: #selector(cancelAction))
         
@@ -70,6 +87,11 @@ class DetailViewController: UIViewController {
         self.navigationItem.leftBarButtonItem = cancelButton
         
         
+    }
+    
+    @objc func fvButtonPressed() {
+        
+        print("Favorite")
     }
     
     
@@ -171,7 +193,7 @@ class DetailViewController: UIViewController {
 extension DetailViewController :UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if(tableView == self.tableView){
-            return 3
+            return 4
 
         }else {
             return 0
@@ -207,7 +229,7 @@ extension DetailViewController :UITableViewDelegate,UITableViewDataSource {
             }
             
             return cell
-        }else{
+        }else if(indexPath.row == 2){
             
             
             let cell = tableView.dequeueReusableCell(withIdentifier: "DetailImageTVC", for: indexPath) as! DetailImage
@@ -227,6 +249,44 @@ extension DetailViewController :UITableViewDelegate,UITableViewDataSource {
             
             return cell
  
+        }else{
+            
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DetailCollectionTVC", for: indexPath) as! DetailCollection
+            
+            
+            if(shareSnapshot != nil){
+                
+                let a = shareSnapshot!.childSnapshot(forPath: "Beaker").childSnapshot(forPath: "info")
+
+                let english = a.childSnapshot(forPath: "english").value as! String
+                //print("test \(english)")
+
+                
+                let ref = Database.database().reference().child("lab")
+                //self.showLoadingDialog()
+                
+                ref.observe(.value, with: {(snapshot) in
+                    //self.stopLoadingDialog()
+                    if(snapshot.hasChildren()){
+                        
+                        
+                        cell.snapshot = snapshot
+                        cell.controller = self
+                        cell.searchSnap(keyword: english)
+                        
+                    }
+                })
+                
+                
+            }else {
+                cell.isHidden = true
+            }
+ 
+            
+            
+            return cell
+            
         }
         
         /*if(indexPath.row == 0){

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="SukhumvitSet.ttc">
+            <string>SukhumvitSet-Bold</string>
+            <string>SukhumvitSet-Text</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="DetailCollectionCell" customModule="LabScan" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="256" height="286"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="256" height="286"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v6Q-NT-fNb">
+                        <rect key="frame" x="0.0" y="0.0" width="256" height="286"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R5D-Kd-nyz">
+                                <rect key="frame" x="0.0" y="0.0" width="256" height="286"/>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FbC-4j-4Tl">
+                                <rect key="frame" x="0.0" y="216" width="256" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="รายละเอียด" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jvH-J1-8Ig">
+                                        <rect key="frame" x="10" y="38" width="75.5" height="27"/>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="หัวข้อ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DT2-nf-L4t">
+                                        <rect key="frame" x="10" y="6.5" width="60.5" height="41.5"/>
+                                        <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="26"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.30051369859999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="jvH-J1-8Ig" firstAttribute="top" secondItem="DT2-nf-L4t" secondAttribute="bottom" constant="-10" id="Es1-E3-H1z"/>
+                                    <constraint firstItem="jvH-J1-8Ig" firstAttribute="leading" secondItem="FbC-4j-4Tl" secondAttribute="leading" constant="10" id="UOn-CV-N66"/>
+                                    <constraint firstAttribute="bottom" secondItem="jvH-J1-8Ig" secondAttribute="bottom" constant="5" id="dvG-1w-WIV"/>
+                                    <constraint firstItem="DT2-nf-L4t" firstAttribute="leading" secondItem="FbC-4j-4Tl" secondAttribute="leading" constant="10" id="ehA-ea-b3g"/>
+                                    <constraint firstAttribute="height" constant="70" id="wHE-QJ-QFH"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.55634254220000001" green="0.97934550050000002" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="FbC-4j-4Tl" secondAttribute="trailing" id="4tc-8b-BOE"/>
+                            <constraint firstAttribute="trailing" secondItem="R5D-Kd-nyz" secondAttribute="trailing" id="Ur4-fS-EhM"/>
+                            <constraint firstAttribute="bottom" secondItem="FbC-4j-4Tl" secondAttribute="bottom" id="VKL-dW-hC6"/>
+                            <constraint firstItem="FbC-4j-4Tl" firstAttribute="leading" secondItem="v6Q-NT-fNb" secondAttribute="leading" id="Xml-lw-NPD"/>
+                            <constraint firstItem="R5D-Kd-nyz" firstAttribute="top" secondItem="v6Q-NT-fNb" secondAttribute="top" id="azk-8e-TBd"/>
+                            <constraint firstItem="R5D-Kd-nyz" firstAttribute="leading" secondItem="v6Q-NT-fNb" secondAttribute="leading" id="i06-eJ-Jwu"/>
+                            <constraint firstAttribute="bottom" secondItem="R5D-Kd-nyz" secondAttribute="bottom" id="pAe-c9-Ge1"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="v6Q-NT-fNb" secondAttribute="bottom" id="6Te-RZ-SqW"/>
+                <constraint firstAttribute="trailing" secondItem="v6Q-NT-fNb" secondAttribute="trailing" id="Hd3-GM-2x1"/>
+                <constraint firstItem="v6Q-NT-fNb" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="YaR-Db-W3u"/>
+                <constraint firstItem="v6Q-NT-fNb" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="sXN-gf-fzH"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="256" height="286"/>
+            <connections>
+                <outlet property="cellView" destination="v6Q-NT-fNb" id="mtY-Lb-DzB"/>
+                <outlet property="imageView" destination="R5D-Kd-nyz" id="qkK-23-ll8"/>
+                <outlet property="labelBG" destination="FbC-4j-4Tl" id="PvO-ze-X6S"/>
+                <outlet property="subTitle" destination="jvH-J1-8Ig" id="WAd-m6-XNW"/>
+                <outlet property="title" destination="DT2-nf-L4t" id="7Q2-5w-P0z"/>
+            </connections>
+            <point key="canvasLocation" x="302.39999999999998" y="251.87406296851577"/>
+        </collectionViewCell>
+    </objects>
+</document>
