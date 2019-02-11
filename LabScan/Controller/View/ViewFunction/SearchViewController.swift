@@ -12,7 +12,8 @@ import FirebaseDatabase
 class SearchViewController: UIViewController, UISearchBarDelegate,UITableViewDataSource,UITableViewDelegate {
     
     
-    
+    //var collData = Array<CollectionData>()
+
     var data = Array<ObjectData>()
     
     
@@ -37,6 +38,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate,UITableViewDat
         let config = MainConfig()
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.separatorStyle = .none
+
         
         //let ref = Database.database().reference().child("lab")
         searchObject(str: "")
@@ -150,13 +153,15 @@ class SearchViewController: UIViewController, UISearchBarDelegate,UITableViewDat
     }
     
     func checkObj(english :String,thai :String, url :String,want :String){
-        print(english)
+        //print(english)
         
         let d = ObjectData.init(english: english, thai: thai, url: url, description: "", type: "")
         
         if(want.count > 0){
             if(english.index(of: want) != nil || thai.index(of: want) != nil){
                 data.append(d)
+                self.tableView.reloadData()
+            }else {
                 self.tableView.reloadData()
             }
         }else {
@@ -175,25 +180,40 @@ class SearchViewController: UIViewController, UISearchBarDelegate,UITableViewDat
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return data.count
+        
+        if(data.count > 0){
+            return data.count + 1
+
+        }else {
+            return data.count
+
+        }
         //return 10
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //if(indexPath.row == 0){
+        if(indexPath.row == 0){
+            
+            let cell = tableView.dequeueReusableCell(withIdentifier: "searchObjectTitleTVC", for: indexPath) as! UITableViewCell
+        
+        
+            
+            
+            return cell
+        }else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "searchTVC", for: indexPath) as! ObjectCell
-        
-        let slot = data[indexPath.row]
-        
+            
+            let slot = data[indexPath.row - 1]
+            
             cell.imag.downloaded(from: slot.url)
-        cell.titleLabel.text = slot.thai
-        cell.subTitleLabel.text = slot.english
+            cell.titleLabel.text = slot.thai
+            cell.subTitleLabel.text = slot.english
             
             //cell.contentView.backgroundColor = .clear
             
             
             return cell
-        //}else {
+        }
     }
 
 }

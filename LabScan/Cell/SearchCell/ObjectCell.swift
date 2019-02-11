@@ -20,7 +20,10 @@ class ObjectCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        imag.layer.cornerRadius = 10
+        imag.clipsToBounds = true
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
