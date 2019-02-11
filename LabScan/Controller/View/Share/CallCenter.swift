@@ -29,4 +29,7 @@ class CallCenter {
     
     let DetailViewController :String = "DetailVC"
     
+    let ImagePreviewViewController :String = "ImagePreviewVC"
+
+    
 }

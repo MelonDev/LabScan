@@ -97,6 +97,8 @@ class DetailViewController: UIViewController {
         
         self.navigationController?.navigationBar.prefersLargeTitles = true
         self.navigationItem.largeTitleDisplayMode = .always
+        self.navigationController?.navigationBar.barTintColor = UIColor.white
+        
         
         MainConfig.init().darkStatusBar(animated: animated)
         
@@ -108,6 +110,7 @@ class DetailViewController: UIViewController {
         
         let ref = Database.database().reference().child("lab").child("equipment").child("glass")
         //self.showLoadingDialog()
+        
         ref.observe(.value, with: {(snapshot) in
             //self.stopLoadingDialog()
             if(snapshot.hasChildren()){
@@ -214,7 +217,9 @@ extension DetailViewController :UITableViewDelegate,UITableViewDataSource {
                 let a = shareSnapshot!.childSnapshot(forPath: "Beaker")
 
                 cell.snapshot = a
+                cell.controller = self
                 cell.loadSnap()
+                
             }else {
                 cell.isHidden = true
             }

@@ -31,7 +31,7 @@ class HistoryViewController: UIViewController {
         //self.view.backgroundColor = UIColor.white
         
         let topView = UIView(frame:CGRect(x: 0,y: UIScreen.main.bounds.height - 50, width: UIScreen.main.bounds.width, height: 50))
-        topView.backgroundColor = UIColor.black
+        topView.backgroundColor = UIColor.white
         self.view.insertSubview(topView, at: 0)
 
         /*

@@ -116,13 +116,13 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="หมวดหมู่" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7V-gy-DYI">
-                                            <rect key="frame" x="170.5" y="13.5" width="73" height="23.5"/>
+                                            <rect key="frame" x="170.5" y="9" width="73" height="32"/>
                                             <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="20"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7RI-rb-JrW">
-                                            <rect key="frame" x="16" y="9" width="62" height="32"/>
+                                            <rect key="frame" x="16" y="5.5" width="63" height="39"/>
                                             <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="17"/>
                                             <state key="normal" title="ย้อนกลับ">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -257,13 +257,13 @@
                                         <rect key="frame" x="0.0" y="554" width="414" height="220"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ตรวจพบวัตถุ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ngf-o1-Q6p">
-                                                <rect key="frame" x="20" y="10" width="104.5" height="23.5"/>
+                                                <rect key="frame" x="20" y="10" width="108.5" height="32"/>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="ScanCV" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LZq-GD-WUe">
-                                                <rect key="frame" x="0.0" y="38.5" width="414" height="161.5"/>
+                                                <rect key="frame" x="0.0" y="47" width="414" height="153"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GcD-ku-8uu">
                                                     <size key="itemSize" width="208" height="135"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -272,7 +272,7 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ScanCVCID" reuseIdentifier="ScanCVC" id="qaW-Va-XcP">
-                                                        <rect key="frame" x="0.0" y="13.5" width="208" height="135"/>
+                                                        <rect key="frame" x="0.0" y="9" width="208" height="135"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                             <rect key="frame" x="0.0" y="0.0" width="208" height="135"/>
@@ -648,6 +648,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="z00-Pr-ueb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3457.971014492754" y="1632.5892857142856"/>
+        </scene>
+        <!--Image Preview View Controller-->
+        <scene sceneID="joY-Jp-5dI">
+            <objects>
+                <viewController storyboardIdentifier="ImagePreviewVC" id="f5r-lw-LLf" customClass="ImagePreviewViewController" customModule="LabScan" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bK8-Lx-QAg">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="BjM-GV-vUM"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="k9m-ck-Jty" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4212" y="1633"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iXi-aS-U27">

@@ -18,7 +18,7 @@ class DetailImageCell: UICollectionViewCell {
         
         cellView = MainConfig().setStyleWithOutShadow(viewLayer: cellView, cornerRadius: 10)
         
-        cellView.backgroundColor = UIColor.red
+        cellView.backgroundColor = UIColor.white
         imageView.contentMode = .scaleAspectFill
 
         imageView.layer.cornerRadius = 10
@@ -27,6 +27,9 @@ class DetailImageCell: UICollectionViewCell {
         //veView.layer.cornerRadius = 10
         //veView.clipsToBounds = true
         
+        
+        
     }
+    
 
 }

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		09AEC89662888B62797390C6 /* Pods_LabScanUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1ED66BA5DC29DDEAFCEEC9EB /* Pods_LabScanUITests.framework */; };
+		1502829022117BB800D79F9D /* ImagePreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1502828F22117BB800D79F9D /* ImagePreviewViewController.swift */; };
 		150727B521F15ED000667D13 /* TestAppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 150727B421F15ED000667D13 /* TestAppViewController.swift */; };
 		152C5C5F22107AFB00811798 /* DetailDescription.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152C5C5E22107AFB00811798 /* DetailDescription.swift */; };
 		152C5C6122107FF100811798 /* CustomNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152C5C6022107FF100811798 /* CustomNavigationBar.swift */; };
@@ -79,6 +80,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1502828F22117BB800D79F9D /* ImagePreviewViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreviewViewController.swift; sourceTree = "<group>"; };
 		150727B421F15ED000667D13 /* TestAppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestAppViewController.swift; sourceTree = "<group>"; };
 		152C5C5E22107AFB00811798 /* DetailDescription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailDescription.swift; sourceTree = "<group>"; };
 		152C5C6022107FF100811798 /* CustomNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomNavigationBar.swift; sourceTree = "<group>"; };
@@ -424,6 +426,7 @@
 				15E9CAC621F1B61200E4083B /* ScanViewController.swift */,
 				15E9CAC821F1B62800E4083B /* FavoriteViewController.swift */,
 				152CD243220F78D30011BCC0 /* DetailViewController.swift */,
+				1502828F22117BB800D79F9D /* ImagePreviewViewController.swift */,
 			);
 			path = ViewFunction;
 			sourceTree = "<group>";
@@ -744,6 +747,7 @@
 				152C5C5F22107AFB00811798 /* DetailDescription.swift in Sources */,
 				152C5C6722108EC100811798 /* DetailImageCell.swift in Sources */,
 				15CFCBE0220F094D00F6696F /* ScanVIewCell.swift in Sources */,
+				1502829022117BB800D79F9D /* ImagePreviewViewController.swift in Sources */,
 				15E9CAC321F1B5F600E4083B /* HistoryViewController.swift in Sources */,
 				15CFCBD8220E1BFC00F6696F /* ScanCell.swift in Sources */,
 				15E9CAC921F1B62800E4083B /* FavoriteViewController.swift in Sources */,

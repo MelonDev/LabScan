@@ -15,12 +15,28 @@ class DetailImage: UITableViewCell,UICollectionViewDataSource,UICollectionViewDe
     //var data = [String():Array<DetailMediaData>()]
     var data = Array<DetailMediaData>()
     
+    var controller :DetailViewController? = nil
+    
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         
+        //let slot = data[indexPath.row]
         
+        var count = 0
         
-        return data.count
+        for i in data {
+            if(i.info == "image"){
+                count += 1
+            }
+        }
+        
+        /*
+        if(slot.info == "image"){
+            count =
+        }
+        */
+        
+        return count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
@@ -34,6 +50,30 @@ class DetailImage: UITableViewCell,UICollectionViewDataSource,UICollectionViewDe
         
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        //let viewController = ImagePreviewViewController(nibName: "YourViewController", bundle: nil)
+        let vc = MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().ImagePreviewViewController) as! ImagePreviewViewController
+        //let vc = ImagePreviewViewController()
+        
+        vc.url = data[indexPath.row].url
+        
+        
+        if(self.controller != nil){
+            self.controller?.navigationController?.pushViewController(vc, animated: true)
+            //vc.reloadView()
+        }
+        
+        
+        //let vc = MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().DetailViewController) as! DetailViewController
+        //MainConfig().actionNavVC(this: self, viewController: vc)
+        
+        
+        
+    }
+    
+    
     
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -75,6 +115,7 @@ class DetailImage: UITableViewCell,UICollectionViewDataSource,UICollectionViewDe
             if(media != nil){
                 var i = 0
                 if(media.childrenCount > 0){
+                    data = []
                     for child in media.children {
                         let snap = child as? DataSnapshot
                         //let id = snap?.key as! String
