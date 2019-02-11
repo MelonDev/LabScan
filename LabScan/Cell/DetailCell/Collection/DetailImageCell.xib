@@ -20,7 +20,18 @@
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GCV-26-yWG">
                         <rect key="frame" x="0.0" y="0.0" width="149" height="178"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="w2I-ki-cBq">
+                                <rect key="frame" x="0.0" y="0.0" width="149" height="178"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="w2I-ki-cBq" firstAttribute="top" secondItem="GCV-26-yWG" secondAttribute="top" id="Fyc-1l-rPf"/>
+                            <constraint firstItem="w2I-ki-cBq" firstAttribute="leading" secondItem="GCV-26-yWG" secondAttribute="leading" id="Q6d-2j-8i7"/>
+                            <constraint firstAttribute="bottom" secondItem="w2I-ki-cBq" secondAttribute="bottom" id="Xv6-WF-Dds"/>
+                            <constraint firstAttribute="trailing" secondItem="w2I-ki-cBq" secondAttribute="trailing" id="b8H-9f-GFb"/>
+                        </constraints>
                     </view>
                 </subviews>
             </view>
@@ -32,6 +43,10 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="149" height="178"/>
+            <connections>
+                <outlet property="cellView" destination="GCV-26-yWG" id="d5x-aS-enE"/>
+                <outlet property="imageView" destination="w2I-ki-cBq" id="EOQ-dX-osg"/>
+            </connections>
             <point key="canvasLocation" x="216.80000000000001" y="203.29835082458771"/>
         </collectionViewCell>
     </objects>

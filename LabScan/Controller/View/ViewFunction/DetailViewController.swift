@@ -205,18 +205,23 @@ extension DetailViewController :UITableViewDelegate,UITableViewDataSource {
             
             return cell
         }else{
+            
+            
             let cell = tableView.dequeueReusableCell(withIdentifier: "DetailImageTVC", for: indexPath) as! DetailImage
             
-            /*
             if(shareSnapshot != nil){
-                let a = shareSnapshot!.childSnapshot(forPath: "Beaker").childSnapshot(forPath: "info")
-                let des = a.childSnapshot(forPath: "description").value as! String
                 
-                //cell.label.text = "     \(des)"
+                let a = shareSnapshot!.childSnapshot(forPath: "Beaker")
+
+                cell.snapshot = a
+                cell.loadSnap()
+            }else {
+                cell.isHidden = true
             }
- */
+ 
             
             return cell
+ 
         }
         
         /*if(indexPath.row == 0){
@@ -233,6 +238,8 @@ extension DetailViewController :UITableViewDelegate,UITableViewDataSource {
     
     
 }
+
+
 
 /*
  extension DetailViewController :UICollectionViewDelegate,UICollectionViewDataSource {

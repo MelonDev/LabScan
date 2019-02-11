@@ -14,6 +14,8 @@
 		152C5C6322108D1100811798 /* DetailImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152C5C6222108D1100811798 /* DetailImage.swift */; };
 		152C5C6722108EC100811798 /* DetailImageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152C5C6522108EC100811798 /* DetailImageCell.swift */; };
 		152C5C6822108EC100811798 /* DetailImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 152C5C6622108EC100811798 /* DetailImageCell.xib */; };
+		152C5C6B2210AD7D00811798 /* DetailMediaData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152C5C6A2210AD7D00811798 /* DetailMediaData.swift */; };
+		152C5C6D2210B59700811798 /* CustomUIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152C5C6C2210B59700811798 /* CustomUIImageView.swift */; };
 		152CD244220F78D30011BCC0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152CD243220F78D30011BCC0 /* DetailViewController.swift */; };
 		152CD246221022840011BCC0 /* CustomUIscrollView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152CD245221022840011BCC0 /* CustomUIscrollView.swift */; };
 		152CD25722103E200011BCC0 /* TableDetailTitle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 152CD25622103E200011BCC0 /* TableDetailTitle.swift */; };
@@ -83,6 +85,8 @@
 		152C5C6222108D1100811798 /* DetailImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImage.swift; sourceTree = "<group>"; };
 		152C5C6522108EC100811798 /* DetailImageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailImageCell.swift; sourceTree = "<group>"; };
 		152C5C6622108EC100811798 /* DetailImageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DetailImageCell.xib; sourceTree = "<group>"; };
+		152C5C6A2210AD7D00811798 /* DetailMediaData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailMediaData.swift; sourceTree = "<group>"; };
+		152C5C6C2210B59700811798 /* CustomUIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIImageView.swift; sourceTree = "<group>"; };
 		152CD243220F78D30011BCC0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		152CD245221022840011BCC0 /* CustomUIscrollView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIscrollView.swift; sourceTree = "<group>"; };
 		152CD25622103E200011BCC0 /* TableDetailTitle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableDetailTitle.swift; sourceTree = "<group>"; };
@@ -178,6 +182,14 @@
 			path = Collection;
 			sourceTree = "<group>";
 		};
+		152C5C692210AD5C00811798 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				152C5C6A2210AD7D00811798 /* DetailMediaData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		152CD24D221033B30011BCC0 /* DetailCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,6 +227,7 @@
 			isa = PBXGroup;
 			children = (
 				1580AFE4220963210052CBBF /* Inceptionv3.mlmodel */,
+				152C5C692210AD5C00811798 /* Data */,
 				157C6BC721EE6A90009DF69A /* Cell */,
 				157C6BC021EDB4A5009DF69A /* Resource */,
 				157C6B8521EC899F009DF69A /* Storyboard */,
@@ -332,6 +345,7 @@
 				15CFCBD4220D735600F6696F /* CustomUIdevice.swift */,
 				152CD245221022840011BCC0 /* CustomUIscrollView.swift */,
 				152C5C6022107FF100811798 /* CustomNavigationBar.swift */,
+				152C5C6C2210B59700811798 /* CustomUIImageView.swift */,
 			);
 			path = Share;
 			sourceTree = "<group>";
@@ -726,6 +740,7 @@
 				15CFCBD5220D735600F6696F /* CustomUIdevice.swift in Sources */,
 				1580AFCB2209324E0052CBBF /* PreviewView.swift in Sources */,
 				15E9CAC121F1B5E200E4083B /* CategoryViewController.swift in Sources */,
+				152C5C6D2210B59700811798 /* CustomUIImageView.swift in Sources */,
 				152C5C5F22107AFB00811798 /* DetailDescription.swift in Sources */,
 				152C5C6722108EC100811798 /* DetailImageCell.swift in Sources */,
 				15CFCBE0220F094D00F6696F /* ScanVIewCell.swift in Sources */,
@@ -742,6 +757,7 @@
 				157C6BBF21ED9E25009DF69A /* MainConfig.swift in Sources */,
 				157C6BD321EE6FEF009DF69A /* WalkThroughCollectionViewCell.swift in Sources */,
 				157C6BCA21EE6ABD009DF69A /* MenuiPhoneCollectionViewCell.swift in Sources */,
+				152C5C6B2210AD7D00811798 /* DetailMediaData.swift in Sources */,
 				1580AFE5220963210052CBBF /* Inceptionv3.mlmodel in Sources */,
 				157C6B8121EC8965009DF69A /* MainIpadViewController.swift in Sources */,
 				15E9CABF21F1B5C900E4083B /* SearchViewController.swift in Sources */,

@@ -60,7 +60,7 @@ class ScanViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferD
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 10, left: 20, bottom: 10, right: 20)
-        layout.itemSize = CGSize(width: 250, height: ScanCollection.bounds.height)
+        layout.itemSize = CGSize(width: 250, height: ScanCollection.bounds.height - 10)
         layout.scrollDirection = .horizontal
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 15

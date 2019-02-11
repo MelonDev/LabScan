@@ -9,10 +9,24 @@
 import UIKit
 
 class DetailImageCell: UICollectionViewCell {
-
+    @IBOutlet weak var cellView: UIView!
+    @IBOutlet weak var imageView: UIImageView!
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        
+        cellView = MainConfig().setStyleWithOutShadow(viewLayer: cellView, cornerRadius: 10)
+        
+        cellView.backgroundColor = UIColor.red
+        imageView.contentMode = .scaleAspectFill
+
+        imageView.layer.cornerRadius = 10
+        imageView.clipsToBounds = true
+        
+        //veView.layer.cornerRadius = 10
+        //veView.clipsToBounds = true
+        
     }
 
 }

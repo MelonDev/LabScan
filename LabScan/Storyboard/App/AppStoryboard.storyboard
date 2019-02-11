@@ -116,13 +116,13 @@
                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="หมวดหมู่" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k7V-gy-DYI">
-                                            <rect key="frame" x="170.5" y="9" width="73" height="32"/>
+                                            <rect key="frame" x="170.5" y="13.5" width="73" height="23.5"/>
                                             <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="20"/>
                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7RI-rb-JrW">
-                                            <rect key="frame" x="16" y="5.5" width="63" height="39"/>
+                                            <rect key="frame" x="16" y="9" width="62" height="32"/>
                                             <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="17"/>
                                             <state key="normal" title="ย้อนกลับ">
                                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -257,13 +257,13 @@
                                         <rect key="frame" x="0.0" y="554" width="414" height="220"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ตรวจพบวัตถุ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ngf-o1-Q6p">
-                                                <rect key="frame" x="20" y="10" width="108.5" height="32"/>
+                                                <rect key="frame" x="20" y="10" width="104.5" height="23.5"/>
                                                 <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="20"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <collectionView clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="scaleToFill" restorationIdentifier="ScanCV" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="LZq-GD-WUe">
-                                                <rect key="frame" x="0.0" y="47" width="414" height="153"/>
+                                                <rect key="frame" x="0.0" y="38.5" width="414" height="161.5"/>
                                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="GcD-ku-8uu">
                                                     <size key="itemSize" width="208" height="135"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -272,7 +272,7 @@
                                                 </collectionViewFlowLayout>
                                                 <cells>
                                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="ScanCVCID" reuseIdentifier="ScanCVC" id="qaW-Va-XcP">
-                                                        <rect key="frame" x="0.0" y="9" width="208" height="135"/>
+                                                        <rect key="frame" x="0.0" y="13.5" width="208" height="135"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                             <rect key="frame" x="0.0" y="0.0" width="208" height="135"/>
@@ -566,27 +566,27 @@
                                             <outlet property="label" destination="vXV-7V-mnC" id="waf-25-hpo"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailImageTVC" rowHeight="204" id="O9d-Tp-xsB">
-                                        <rect key="frame" x="0.0" y="116" width="414" height="204"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DetailImageTVC" rowHeight="248" id="O9d-Tp-xsB" customClass="DetailImage" customModule="LabScan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="116" width="414" height="248"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="O9d-Tp-xsB" id="NuV-Vt-bID">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="203.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="247.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xfR-Ah-4O7">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="203.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="247.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="รูปภาพและวิดีโอ" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H3D-Zp-YSh">
-                                                            <rect key="frame" x="20" y="10" width="153" height="38"/>
+                                                            <rect key="frame" x="20" y="10" width="153" height="42"/>
                                                             <fontDescription key="fontDescription" name="SukhumvitSet-SemiBold" family="Sukhumvit Set" pointSize="24"/>
                                                             <color key="textColor" red="0.37055522200000002" green="0.37056469920000001" blue="0.37055957319999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="40p-U3-rAj">
-                                                            <rect key="frame" x="0.0" y="56" width="414" height="140"/>
+                                                            <rect key="frame" x="0.0" y="60" width="414" height="180"/>
                                                             <color key="backgroundColor" red="1" green="0.24826467169999999" blue="0.20981286900000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="140" id="KNm-9B-XxK"/>
+                                                                <constraint firstAttribute="height" constant="180" id="KNm-9B-XxK"/>
                                                             </constraints>
                                                             <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="EAB-zh-wQK">
                                                                 <size key="itemSize" width="50" height="50"/>
@@ -595,7 +595,7 @@
                                                                 <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                             </collectionViewFlowLayout>
                                                             <cells>
-                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="PYF-Q6-uWy">
+                                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CVIMAGE" id="PYF-Q6-uWy">
                                                                     <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -624,6 +624,9 @@
                                                 <constraint firstItem="xfR-Ah-4O7" firstAttribute="top" secondItem="NuV-Vt-bID" secondAttribute="top" id="dbq-yf-vag"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="collectionView" destination="40p-U3-rAj" id="be5-Mz-eLQ"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
