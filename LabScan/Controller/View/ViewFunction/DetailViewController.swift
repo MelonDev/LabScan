@@ -17,6 +17,8 @@ class DetailViewController: UIViewController {
     var shareSnapshot :DataSnapshot? = nil
     var alertStatus = false
     
+    var name :String = ""
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -137,8 +139,11 @@ class DetailViewController: UIViewController {
             //self.stopLoadingDialog()
             if(snapshot.hasChildren()){
                 
-                let a = snapshot.childSnapshot(forPath: "Beaker").childSnapshot(forPath: "info")
                 
+                print(self.name)
+                //let a = snapshot.childSnapshot(forPath: "Beaker").childSnapshot(forPath: "info")
+                let a = snapshot.childSnapshot(forPath: self.name).childSnapshot(forPath: "info")
+
                 let thai = a.childSnapshot(forPath: "thai").value as! String
                 //let english = a.childSnapshot(forPath: "english").value as! String
                 //let des = a.childSnapshot(forPath: "description").value as! String
@@ -207,7 +212,10 @@ extension DetailViewController :UITableViewDelegate,UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DetailTVC", for: indexPath) as! TableDetailTitle
             
             if(shareSnapshot != nil){
-                let a = shareSnapshot!.childSnapshot(forPath: "Beaker").childSnapshot(forPath: "info")
+                //let a = shareSnapshot!.childSnapshot(forPath: "Beaker").childSnapshot(forPath: "info")
+                
+                let a = shareSnapshot!.childSnapshot(forPath: self.name).childSnapshot(forPath: "info")
+
                 let english = a.childSnapshot(forPath: "english").value as! String
                 
                 cell.label.text = english
@@ -222,7 +230,10 @@ extension DetailViewController :UITableViewDelegate,UITableViewDataSource {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DetailTVCS", for: indexPath) as! DetailDescription
             
             if(shareSnapshot != nil){
-                let a = shareSnapshot!.childSnapshot(forPath: "Beaker").childSnapshot(forPath: "info")
+                //let a = shareSnapshot!.childSnapshot(forPath: "Beaker").childSnapshot(forPath: "info")
+                
+                let a = shareSnapshot!.childSnapshot(forPath: self.name).childSnapshot(forPath: "info")
+
                 let des = a.childSnapshot(forPath: "description").value as! String
                 
                 cell.label.text = "     \(des)"
@@ -236,7 +247,10 @@ extension DetailViewController :UITableViewDelegate,UITableViewDataSource {
             
             if(shareSnapshot != nil){
                 
-                let a = shareSnapshot!.childSnapshot(forPath: "Beaker")
+                //let a = shareSnapshot!.childSnapshot(forPath: "Beaker")
+                
+                let a = shareSnapshot!.childSnapshot(forPath: self.name)
+
 
                 cell.snapshot = a
                 cell.controller = self
@@ -257,7 +271,9 @@ extension DetailViewController :UITableViewDelegate,UITableViewDataSource {
             
             if(shareSnapshot != nil){
                 
-                let a = shareSnapshot!.childSnapshot(forPath: "Beaker").childSnapshot(forPath: "info")
+                //let a = shareSnapshot!.childSnapshot(forPath: "Beaker").childSnapshot(forPath: "info")
+                let a = shareSnapshot!.childSnapshot(forPath: self.name).childSnapshot(forPath: "info")
+
 
                 let english = a.childSnapshot(forPath: "english").value as! String
                 //print("test \(english)")

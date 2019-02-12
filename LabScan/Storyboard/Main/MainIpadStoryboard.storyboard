@@ -42,11 +42,17 @@
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="18"/>
                                                 <state key="normal" title="Button" image="search-2"/>
+                                                <connections>
+                                                    <action selector="searchAction:" destination="lhy-KY-FB7" eventType="touchUpInside" id="J2x-Cm-FW6"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="J1a-yz-Lla">
                                                 <rect key="frame" x="179" y="32" width="36" height="36"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <state key="normal" title="Button" image="user-2"/>
+                                                <connections>
+                                                    <action selector="profileAction:" destination="lhy-KY-FB7" eventType="touchUpInside" id="8Pc-Ok-OGv"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </view>
@@ -213,6 +219,9 @@
                                                 <state key="normal" title="เพิ่มเติม">
                                                     <color key="titleColor" red="0.36078431370000003" green="0.36078431370000003" blue="0.36078431370000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="favoriteAction:" destination="lhy-KY-FB7" eventType="touchUpInside" id="Vpt-xv-JLY"/>
+                                                </connections>
                                             </button>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MC7-ZO-yI3">
                                                 <rect key="frame" x="169" y="19" width="2" height="176"/>

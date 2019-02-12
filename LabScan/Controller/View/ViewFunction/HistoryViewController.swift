@@ -12,7 +12,7 @@ import FirebaseDatabase
 class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDataSource {
     
     @IBOutlet weak var tableView: UITableView!
-    var data = Array<String>()
+    var data = Array<CollectData>()
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -22,10 +22,23 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HistoryTVC", for: indexPath) as! UITableViewCell
         
-        cell.textLabel?.text = data[indexPath.row]
+        let slot = data[indexPath.row]
+
+        
+        cell.textLabel?.text = slot.thai
         cell.textLabel?.font = UIFont(name:"Sukhumvit Set", size: 20.0)
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let slot = data[indexPath.row]
+        
+        
+        let vc = MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().DetailViewController) as! DetailViewController
+        MainConfig().actionNavVC(this: self, viewController: vc)
+        
+        vc.name = slot.key
     }
     
     
@@ -72,9 +85,15 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
                     //print(id)
                     
                     let value = snap!.value as? NSDictionary
-                    let name = value?["name"] as? String ?? ""
+                    let thai = value?["thai"] as? String ?? ""
+                    let eng = value?["english"] as? String ?? ""
+                    let key = value?["key"] as? String ?? ""
+
+
                     
-                    self.data.append(name)
+                    let wa = CollectData.init(english: eng, thai: thai, url: "", key: key)
+                    
+                    self.data.append(wa)
                     
                     if(i == snapshot.childrenCount - 1){
                         self.tableView.reloadData()
@@ -119,6 +138,10 @@ class HistoryViewController: UIViewController,UITableViewDelegate,UITableViewDat
         super.viewWillAppear(animated)
         
          contentView.hero.modifiers = [.translate(y: UIScreen.main.bounds.height), .useGlobalCoordinateSpace]
+        
+        if let indexPath = self.tableView.indexPathForSelectedRow {
+            self.tableView.deselectRow(at: indexPath, animated: true)
+        }
         
         MainConfig.init().lightStatusBar(animated: animated)
     }

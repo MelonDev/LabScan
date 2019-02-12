@@ -54,6 +54,13 @@
 		157C6BD521EE6FEF009DF69A /* Walthrough.png in Resources */ = {isa = PBXBuildFile; fileRef = 157C6BD221EE6FEF009DF69A /* Walthrough.png */; };
 		157C6BD721EE7F08009DF69A /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C6BD621EE7F08009DF69A /* TestViewController.swift */; };
 		157C6BD921EF10D6009DF69A /* MenuStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 157C6BD821EF10D6009DF69A /* MenuStruct.swift */; };
+		1580995A2213251F0058E57B /* LabScan.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 158099592213251F0058E57B /* LabScan.mlmodel */; };
+		1580995C221326F50058E57B /* LabScans.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1580995B221326F50058E57B /* LabScans.mlmodel */; };
+		1580995E221328800058E57B /* mLabScan.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1580995D2213287F0058E57B /* mLabScan.mlmodel */; };
+		1580996022132C4A0058E57B /* TestA.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1580995F22132C4A0058E57B /* TestA.mlmodel */; };
+		1580996222132E600058E57B /* TestB.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1580996122132E600058E57B /* TestB.mlmodel */; };
+		15809964221332B60058E57B /* TestC.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 15809963221332B60058E57B /* TestC.mlmodel */; };
+		15809966221344AB0058E57B /* CollectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15809965221344AB0058E57B /* CollectData.swift */; };
 		1580AFCB2209324E0052CBBF /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580AFCA2209324E0052CBBF /* PreviewView.swift */; };
 		1580AFE5220963210052CBBF /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1580AFE4220963210052CBBF /* Inceptionv3.mlmodel */; };
 		15CFCBD3220D730F00F6696F /* CustomUIview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CFCBD2220D730F00F6696F /* CustomUIview.swift */; };
@@ -61,6 +68,7 @@
 		15CFCBD8220E1BFC00F6696F /* ScanCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CFCBD7220E1BFC00F6696F /* ScanCell.swift */; };
 		15CFCBE0220F094D00F6696F /* ScanVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CFCBDE220F094D00F6696F /* ScanVIewCell.swift */; };
 		15CFCBE1220F094D00F6696F /* ScanVIewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 15CFCBDF220F094D00F6696F /* ScanVIewCell.xib */; };
+		15D2DA722212B10500F98D76 /* SearchCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15D2DA712212B10500F98D76 /* SearchCollectionCell.swift */; };
 		15E9CABF21F1B5C900E4083B /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9CABE21F1B5C900E4083B /* SearchViewController.swift */; };
 		15E9CAC121F1B5E200E4083B /* CategoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9CAC021F1B5E200E4083B /* CategoryViewController.swift */; };
 		15E9CAC321F1B5F600E4083B /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15E9CAC221F1B5F600E4083B /* HistoryViewController.swift */; };
@@ -142,6 +150,13 @@
 		157C6BD221EE6FEF009DF69A /* Walthrough.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Walthrough.png; sourceTree = "<group>"; };
 		157C6BD621EE7F08009DF69A /* TestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		157C6BD821EF10D6009DF69A /* MenuStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuStruct.swift; sourceTree = "<group>"; };
+		158099592213251F0058E57B /* LabScan.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = LabScan.mlmodel; sourceTree = "<group>"; };
+		1580995B221326F50058E57B /* LabScans.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = LabScans.mlmodel; sourceTree = "<group>"; };
+		1580995D2213287F0058E57B /* mLabScan.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = mLabScan.mlmodel; sourceTree = "<group>"; };
+		1580995F22132C4A0058E57B /* TestA.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TestA.mlmodel; sourceTree = "<group>"; };
+		1580996122132E600058E57B /* TestB.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TestB.mlmodel; sourceTree = "<group>"; };
+		15809963221332B60058E57B /* TestC.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TestC.mlmodel; sourceTree = "<group>"; };
+		15809965221344AB0058E57B /* CollectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectData.swift; sourceTree = "<group>"; };
 		1580AFCA2209324E0052CBBF /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		1580AFE4220963210052CBBF /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 		15CFCBD2220D730F00F6696F /* CustomUIview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIview.swift; sourceTree = "<group>"; };
@@ -149,6 +164,7 @@
 		15CFCBD7220E1BFC00F6696F /* ScanCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanCell.swift; sourceTree = "<group>"; };
 		15CFCBDE220F094D00F6696F /* ScanVIewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanVIewCell.swift; sourceTree = "<group>"; };
 		15CFCBDF220F094D00F6696F /* ScanVIewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScanVIewCell.xib; sourceTree = "<group>"; };
+		15D2DA712212B10500F98D76 /* SearchCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchCollectionCell.swift; sourceTree = "<group>"; };
 		15E9CABE21F1B5C900E4083B /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		15E9CAC021F1B5E200E4083B /* CategoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewController.swift; sourceTree = "<group>"; };
 		15E9CAC221F1B5F600E4083B /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +225,7 @@
 			children = (
 				1502829F22121E1C00D79F9D /* Normal */,
 				150282A42212202000D79F9D /* ObjectCell.swift */,
+				15D2DA712212B10500F98D76 /* SearchCollectionCell.swift */,
 			);
 			path = SearchCell;
 			sourceTree = "<group>";
@@ -237,6 +254,7 @@
 				152C5C6A2210AD7D00811798 /* DetailMediaData.swift */,
 				1502829A2211D6F600D79F9D /* CollectionData.swift */,
 				1502829C22121D2000D79F9D /* ObjectData.swift */,
+				15809965221344AB0058E57B /* CollectData.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -280,6 +298,12 @@
 			isa = PBXGroup;
 			children = (
 				1580AFE4220963210052CBBF /* Inceptionv3.mlmodel */,
+				1580996122132E600058E57B /* TestB.mlmodel */,
+				158099592213251F0058E57B /* LabScan.mlmodel */,
+				1580995B221326F50058E57B /* LabScans.mlmodel */,
+				1580995D2213287F0058E57B /* mLabScan.mlmodel */,
+				15809963221332B60058E57B /* TestC.mlmodel */,
+				1580995F22132C4A0058E57B /* TestA.mlmodel */,
 				152C5C692210AD5C00811798 /* Data */,
 				157C6BC721EE6A90009DF69A /* Cell */,
 				157C6BC021EDB4A5009DF69A /* Resource */,
@@ -794,6 +818,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15809964221332B60058E57B /* TestC.mlmodel in Sources */,
 				157C6BD721EE7F08009DF69A /* TestViewController.swift in Sources */,
 				157C6B8321EC8971009DF69A /* MainIphoneViewController.swift in Sources */,
 				15CFCBD5220D735600F6696F /* CustomUIdevice.swift in Sources */,
@@ -803,16 +828,21 @@
 				152C5C5F22107AFB00811798 /* DetailDescription.swift in Sources */,
 				150282A722122EFB00D79F9D /* CustomStringProtocol.swift in Sources */,
 				152C5C6722108EC100811798 /* DetailImageCell.swift in Sources */,
+				1580995C221326F50058E57B /* LabScans.mlmodel in Sources */,
 				15CFCBE0220F094D00F6696F /* ScanVIewCell.swift in Sources */,
 				1502829022117BB800D79F9D /* ImagePreviewViewController.swift in Sources */,
 				15E9CAC321F1B5F600E4083B /* HistoryViewController.swift in Sources */,
 				150282A222121E3F00D79F9D /* SearchObjectCell.swift in Sources */,
 				15CFCBD8220E1BFC00F6696F /* ScanCell.swift in Sources */,
+				1580995A2213251F0058E57B /* LabScan.mlmodel in Sources */,
 				15E9CAC921F1B62800E4083B /* FavoriteViewController.swift in Sources */,
 				150727B521F15ED000667D13 /* TestAppViewController.swift in Sources */,
 				157C6B4A21EC5C39009DF69A /* ViewController.swift in Sources */,
 				15E9CAC521F1B60200E4083B /* ProfileViewController.swift in Sources */,
+				1580996222132E600058E57B /* TestB.mlmodel in Sources */,
 				15E9CAC721F1B61200E4083B /* ScanViewController.swift in Sources */,
+				15D2DA722212B10500F98D76 /* SearchCollectionCell.swift in Sources */,
+				15809966221344AB0058E57B /* CollectData.swift in Sources */,
 				152CD244220F78D30011BCC0 /* DetailViewController.swift in Sources */,
 				152CD25722103E200011BCC0 /* TableDetailTitle.swift in Sources */,
 				15CFCBD3220D730F00F6696F /* CustomUIview.swift in Sources */,
@@ -827,7 +857,9 @@
 				15E9CABF21F1B5C900E4083B /* SearchViewController.swift in Sources */,
 				157C6BD921EF10D6009DF69A /* MenuStruct.swift in Sources */,
 				150282962211AC2600D79F9D /* DetailCollectionCell.swift in Sources */,
+				1580995E221328800058E57B /* mLabScan.mlmodel in Sources */,
 				150282A52212202000D79F9D /* ObjectCell.swift in Sources */,
+				1580996022132C4A0058E57B /* TestA.mlmodel in Sources */,
 				152C5C6122107FF100811798 /* CustomNavigationBar.swift in Sources */,
 				150282992211BB9300D79F9D /* Colors.swift in Sources */,
 				152C5C6322108D1100811798 /* DetailImage.swift in Sources */,

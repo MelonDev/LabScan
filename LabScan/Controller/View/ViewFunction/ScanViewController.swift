@@ -309,7 +309,21 @@ class ScanViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferD
     private func loadModel() {
         
         
-        model = try? VNCoreMLModel(for: Inceptionv3().model)
+        //model = try? VNCoreMLModel(for: Inceptionv3().model)
+        
+        //model = try? VNCoreMLModel(for: LabScan().model)
+        
+        //model = try? VNCoreMLModel(for: LabScans().model)
+        //model = try? VNCoreMLModel(for: TestA().model)
+
+        model = try? VNCoreMLModel(for: TestB().model)
+        //model = try? VNCoreMLModel(for: TestC().model)
+
+
+        
+        //model = try? VNCoreMLModel(for: mLabScan().model)
+
+
         //model = try? VNCoreMLModel(for: Inceptionv3().model)
         //model = try? VNCoreMLModel(for: MobileNet().model)
         
@@ -380,8 +394,13 @@ class ScanViewController: UIViewController,AVCaptureVideoDataOutputSampleBufferD
                 // The `results` will always be `VNClassificationObservation`s, as specified by the Core ML model in this project.
                 let classifications = results as! [VNClassificationObservation]
                 
+                
                 self.slot = classifications.prefix(5)
                 self.ScanCollection.reloadData()
+                
+                for i in self.slot {
+                    print(i)
+                }
 
                 
                 /*
@@ -464,7 +483,7 @@ extension ScanViewController :UICollectionViewDelegate,UICollectionViewDataSourc
         let arr = Array(slot)
         var arrs :Array<String> = Array()
         for i in arr {
-            if(i.confidence > 0.1){
+            if(i.confidence > 0.95){
                 arrs.append("ITEM")
             }
         }
@@ -488,8 +507,47 @@ extension ScanViewController :UICollectionViewDelegate,UICollectionViewDataSourc
         let fullName = arr[indexPath.row].identifier.characters.split{$0 == ","}.map(String.init)[0]
 
         
-        cell.titleName.text = fullName
-        cell.percentage.text = String(format: "%.0f", arr[indexPath.row].confidence*100) + "%"
+        let ref = Database.database().reference().child("lab").child("equipment").child("glass").child("group")
+        //self.showLoadingDialog()
+        
+        ref.observe(.value, with: {(snapshot) in
+            //self.stopLoadingDialog()
+            if(snapshot.hasChildren()){
+                
+                //let a = snapshot.childSnapshot(forPath: "Beaker").childSnapshot(forPath: "info")
+                let a = snapshot.childSnapshot(forPath: fullName).childSnapshot(forPath: "info")
+                
+                let thai = a.childSnapshot(forPath: "thai").value as! String
+                //let english = a.childSnapshot(forPath: "english").value as! String
+                //let des = a.childSnapshot(forPath: "description").value as! String
+                //let thai = b.value as! String
+                
+                //self.navigationItem.title = thai
+                cell.titleName.text = thai
+                cell.percentage.text = String(format: "%.0f", arr[indexPath.row].confidence*100) + "%"
+
+                
+                //self.shareSnapshot = snapshot
+                //self.tableView.reloadData()
+                
+                /*
+                if(self.alertStatus){
+                    self.stopLoadingDialog()
+                }
+ */
+                
+                //self.engName.text = english
+                //self.desLabel.text = "\(des)\n\(des)\n\(des)\n\(des)"\
+                //self.desLabel.text = "     \(des)"
+                //self.setTextWithReload(label: self.desLabel, text: "     \(des)")
+                
+                //self.scrollView.updateContentView()
+                
+            }
+        })
+        
+        //cell.titleName.text = fullName
+        //cell.percentage.text = String(format: "%.0f", arr[indexPath.row].confidence*100) + "%"
         
         return cell
     }
@@ -520,15 +578,39 @@ extension ScanViewController :UICollectionViewDelegate,UICollectionViewDataSourc
         let fullName = arr[indexPath.row].identifier.characters.split{$0 == ","}.map(String.init)[0]
         
         
-        let e = ["name": fullName]
-        let ref :DatabaseReference = Database.database().reference()
         
-        let key = ref.childByAutoId().key
-
-        ref.child("history").child("chaiwiwat").child(key!).setValue(e)
-            
-            let vc = MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().DetailViewController) as! DetailViewController
-            MainConfig().actionNavVC(this: self, viewController: vc)
+        let ref = Database.database().reference().child("lab").child("equipment").child("glass").child("group")
+        //self.showLoadingDialog()
+        
+        ref.observe(.value, with: {(snapshot) in
+            //self.stopLoadingDialog()
+            if(snapshot.hasChildren()){
+                
+                //let a = snapshot.childSnapshot(forPath: "Beaker").childSnapshot(forPath: "info")
+                let a = snapshot.childSnapshot(forPath: fullName).childSnapshot(forPath: "info")
+                
+                let thai = a.childSnapshot(forPath: "thai").value as! String
+                let english = a.childSnapshot(forPath: "english").value as! String
+               
+                let e = ["english": english,"thai" :thai,"key" :fullName]
+                let ref :DatabaseReference = Database.database().reference()
+                
+                let key = ref.childByAutoId().key
+                
+                ref.child("history").child("chaiwiwat").child(key!).setValue(e)
+                
+                let vc = MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().DetailViewController) as! DetailViewController
+                MainConfig().actionNavVC(this: self, viewController: vc)
+                
+                vc.name = fullName
+                
+            }
+        })
+        
+        
+        
+        
+        
         
         
         

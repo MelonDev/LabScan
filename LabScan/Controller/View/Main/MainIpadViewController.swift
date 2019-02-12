@@ -60,6 +60,19 @@ class MainIpadViewController: UIViewController {
         //goToTest(color: UIColor.init(red: 74/255, green: 54/255, blue: 202/255, alpha: 1))
     }
     
+    @IBAction func searchAction(_ sender: Any) {
+        MainConfig().actionVCWithOutHero(this: self,viewController: MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().SearchViewController) as! SearchViewController)
+    }
+    
+    
+    @IBAction func profileAction(_ sender: Any) {
+        MainConfig().actionVCWithOutHero(this: self,viewController: MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().ProfileViewController) as! ProfileViewController)
+        
+        
+    }
+    @IBAction func favoriteAction(_ sender: Any) {
+         MainConfig().actionVCWithOutHero(this: self,viewController: MainConfig().requireViewController(storyboard: CallCenter.init().AppStoryboard, viewController: CallCenter.init().FavoriteViewController) as! FavoriteViewController)
+    }
     
     
     override func viewDidLoad() {
@@ -80,6 +93,13 @@ class MainIpadViewController: UIViewController {
      
 
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        MainConfig.init().darkStatusBar(animated: animated)
+
     }
    
 
