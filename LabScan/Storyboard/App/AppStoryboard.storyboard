@@ -715,15 +715,85 @@
                                 </constraints>
                                 <blurEffect style="light"/>
                             </visualEffectView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="u4X-uN-f8L">
+                                <rect key="frame" x="0.0" y="94" width="414" height="768"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="favoriteTVCID" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="favoriteTVC" rowHeight="120" id="UEE-0M-eQ6" customClass="FavoriteCell" customModule="LabScan" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" ambiguous="YES" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="UEE-0M-eQ6" id="kf6-2F-hg4">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="119.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vOo-Hi-MNe">
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="120.5"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fjK-AG-XJy">
+                                                            <rect key="frame" x="126" y="8.5" width="288" height="38"/>
+                                                            <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="24"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f8J-Dq-gsj">
+                                                            <rect key="frame" x="20" y="5.5" width="86" height="110"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="110" id="3ZO-Za-GYj"/>
+                                                                <constraint firstAttribute="width" constant="86" id="5Tp-mw-0kp"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mcu-LF-5F3">
+                                                            <rect key="frame" x="126" y="41.5" width="288" height="27"/>
+                                                            <fontDescription key="fontDescription" name="SukhumvitSet-Text" family="Sukhumvit Set" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="fjK-AG-XJy" firstAttribute="leading" secondItem="f8J-Dq-gsj" secondAttribute="trailing" constant="20" id="8AE-gh-rxA"/>
+                                                        <constraint firstItem="Mcu-LF-5F3" firstAttribute="leading" secondItem="f8J-Dq-gsj" secondAttribute="trailing" constant="20" id="JAo-vK-QSr"/>
+                                                        <constraint firstAttribute="trailing" secondItem="fjK-AG-XJy" secondAttribute="trailing" id="JgN-aq-gCP"/>
+                                                        <constraint firstItem="Mcu-LF-5F3" firstAttribute="top" secondItem="fjK-AG-XJy" secondAttribute="bottom" constant="-5" id="MKz-6p-Kaz"/>
+                                                        <constraint firstItem="f8J-Dq-gsj" firstAttribute="leading" secondItem="vOo-Hi-MNe" secondAttribute="leading" constant="20" id="RUl-Uv-zE9"/>
+                                                        <constraint firstAttribute="height" constant="120" id="cr7-Gd-Nyx"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Mcu-LF-5F3" secondAttribute="trailing" id="jCE-nm-kUl"/>
+                                                        <constraint firstItem="fjK-AG-XJy" firstAttribute="top" secondItem="vOo-Hi-MNe" secondAttribute="top" constant="8" id="unZ-Qq-zeH"/>
+                                                        <constraint firstItem="f8J-Dq-gsj" firstAttribute="centerY" secondItem="vOo-Hi-MNe" secondAttribute="centerY" id="x2g-ZI-iBD"/>
+                                                    </constraints>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="vOo-Hi-MNe" firstAttribute="top" secondItem="kf6-2F-hg4" secondAttribute="top" id="40H-4P-Nr6"/>
+                                                <constraint firstAttribute="trailing" secondItem="vOo-Hi-MNe" secondAttribute="trailing" id="G9G-o5-5d6"/>
+                                                <constraint firstAttribute="bottom" secondItem="vOo-Hi-MNe" secondAttribute="bottom" id="q0n-hd-uoh"/>
+                                                <constraint firstItem="vOo-Hi-MNe" firstAttribute="leading" secondItem="kf6-2F-hg4" secondAttribute="leading" id="y9p-2Y-kC8"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="cellView" destination="kf6-2F-hg4" id="NHM-Ad-97S"/>
+                                            <outlet property="imv" destination="f8J-Dq-gsj" id="iqk-gM-hEC"/>
+                                            <outlet property="subTitleLabel" destination="Mcu-LF-5F3" id="YcS-sI-3tJ"/>
+                                            <outlet property="titleLabel" destination="fjK-AG-XJy" id="Ks3-Ml-qhS"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="jVF-2K-dMW" firstAttribute="leading" secondItem="4bw-O7-fup" secondAttribute="leading" id="O1p-U5-6JF"/>
+                            <constraint firstItem="u4X-uN-f8L" firstAttribute="top" secondItem="jVF-2K-dMW" secondAttribute="bottom" id="ULd-xo-bR9"/>
+                            <constraint firstItem="4bw-O7-fup" firstAttribute="trailing" secondItem="u4X-uN-f8L" secondAttribute="trailing" id="aCs-9r-ERL"/>
                             <constraint firstItem="jVF-2K-dMW" firstAttribute="trailing" secondItem="4bw-O7-fup" secondAttribute="trailing" id="ie2-4K-leE"/>
                             <constraint firstItem="jVF-2K-dMW" firstAttribute="top" secondItem="4bw-O7-fup" secondAttribute="top" id="tqo-2H-Iaa"/>
+                            <constraint firstItem="4bw-O7-fup" firstAttribute="bottom" secondItem="u4X-uN-f8L" secondAttribute="bottom" id="yZT-Lt-NIH"/>
+                            <constraint firstItem="u4X-uN-f8L" firstAttribute="leading" secondItem="4bw-O7-fup" secondAttribute="leading" id="ytY-4S-Uu8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="4bw-O7-fup"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="u4X-uN-f8L" id="GFu-mX-Szc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="c2V-49-3pQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

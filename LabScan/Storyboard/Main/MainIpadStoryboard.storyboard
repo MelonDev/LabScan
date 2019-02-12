@@ -11,7 +11,6 @@
     <customFonts key="customFonts">
         <array key="SukhumvitSet.ttc">
             <string>SukhumvitSet-Bold</string>
-            <string>SukhumvitSet-Light</string>
             <string>SukhumvitSet-SemiBold</string>
         </array>
     </customFonts>
@@ -247,72 +246,7 @@
                                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
                                                             <rect key="frame" x="0.0" y="0.0" width="146" height="217"/>
                                                             <autoresizingMask key="autoresizingMask"/>
-                                                            <subviews>
-                                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kr6-S7-Bsp">
-                                                                    <rect key="frame" x="7.5" y="18" width="131" height="181"/>
-                                                                    <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6Ng-xO-8I9">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="131" height="181"/>
-                                                                        </imageView>
-                                                                        <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l82-ZC-2Ey">
-                                                                            <rect key="frame" x="0.0" y="120" width="131" height="61"/>
-                                                                            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="M2P-oY-ng8">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="131" height="61"/>
-                                                                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                                                                                <subviews>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="sub" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oWj-Sz-ttN">
-                                                                                        <rect key="frame" x="8" y="31" width="27" height="27"/>
-                                                                                        <fontDescription key="fontDescription" name="SukhumvitSet-Light" family="Sukhumvit Set" pointSize="15"/>
-                                                                                        <color key="textColor" white="1" alpha="0.69523223460000005" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <nil key="highlightedColor"/>
-                                                                                    </label>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" misplaced="YES" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FWo-RC-wSm">
-                                                                                        <rect key="frame" x="8" y="-4" width="54" height="48"/>
-                                                                                        <fontDescription key="fontDescription" name="SukhumvitSet-Bold" family="Sukhumvit Set" pointSize="26"/>
-                                                                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        <nil key="highlightedColor"/>
-                                                                                    </label>
-                                                                                </subviews>
-                                                                                <constraints>
-                                                                                    <constraint firstItem="FWo-RC-wSm" firstAttribute="top" secondItem="M2P-oY-ng8" secondAttribute="top" constant="-4" id="2GF-We-JrE"/>
-                                                                                    <constraint firstItem="FWo-RC-wSm" firstAttribute="leading" secondItem="M2P-oY-ng8" secondAttribute="leading" constant="8" id="5t6-yU-2h5"/>
-                                                                                    <constraint firstAttribute="bottom" secondItem="oWj-Sz-ttN" secondAttribute="bottom" constant="3" id="JdP-3q-8kg"/>
-                                                                                    <constraint firstItem="oWj-Sz-ttN" firstAttribute="leading" secondItem="M2P-oY-ng8" secondAttribute="leading" constant="8" id="LMx-al-TAm"/>
-                                                                                    <constraint firstItem="oWj-Sz-ttN" firstAttribute="top" secondItem="FWo-RC-wSm" secondAttribute="bottom" constant="-13" id="fHQ-IG-L8o"/>
-                                                                                </constraints>
-                                                                            </view>
-                                                                            <constraints>
-                                                                                <constraint firstAttribute="height" constant="61" id="N7S-ma-rwa"/>
-                                                                            </constraints>
-                                                                            <blurEffect style="light"/>
-                                                                        </visualEffectView>
-                                                                    </subviews>
-                                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                    <constraints>
-                                                                        <constraint firstAttribute="trailing" secondItem="6Ng-xO-8I9" secondAttribute="trailing" id="44y-Fi-A0y"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="6Ng-xO-8I9" secondAttribute="bottom" id="BA1-UO-nKz"/>
-                                                                        <constraint firstAttribute="height" constant="181" id="GGY-8e-pw5"/>
-                                                                        <constraint firstAttribute="bottom" secondItem="l82-ZC-2Ey" secondAttribute="bottom" id="Gls-FP-dj8"/>
-                                                                        <constraint firstAttribute="width" constant="131" id="Rip-7q-NGy"/>
-                                                                        <constraint firstItem="l82-ZC-2Ey" firstAttribute="leading" secondItem="kr6-S7-Bsp" secondAttribute="leading" id="eV8-rD-fpg"/>
-                                                                        <constraint firstItem="6Ng-xO-8I9" firstAttribute="top" secondItem="kr6-S7-Bsp" secondAttribute="top" id="mRc-2H-Sne"/>
-                                                                        <constraint firstItem="6Ng-xO-8I9" firstAttribute="leading" secondItem="kr6-S7-Bsp" secondAttribute="leading" id="tAB-nX-i3k"/>
-                                                                        <constraint firstAttribute="trailing" secondItem="l82-ZC-2Ey" secondAttribute="trailing" id="wy7-9I-uK5"/>
-                                                                    </constraints>
-                                                                </view>
-                                                            </subviews>
                                                         </view>
-                                                        <constraints>
-                                                            <constraint firstItem="kr6-S7-Bsp" firstAttribute="centerY" secondItem="b3U-FP-aOD" secondAttribute="centerY" id="W67-m2-nJI"/>
-                                                            <constraint firstItem="kr6-S7-Bsp" firstAttribute="centerX" secondItem="b3U-FP-aOD" secondAttribute="centerX" id="z5p-MT-due"/>
-                                                        </constraints>
-                                                        <connections>
-                                                            <outlet property="imageView" destination="6Ng-xO-8I9" id="rc0-Fy-0ma"/>
-                                                            <outlet property="mainView" destination="kr6-S7-Bsp" id="EWW-j9-qEu"/>
-                                                            <outlet property="subLabel" destination="oWj-Sz-ttN" id="Bth-3l-ZXG"/>
-                                                            <outlet property="titleLabel" destination="FWo-RC-wSm" id="7ik-4H-ucs"/>
-                                                            <outlet property="veView" destination="l82-ZC-2Ey" id="mJQ-hN-hqi"/>
-                                                        </connections>
                                                     </collectionViewCell>
                                                 </cells>
                                             </collectionView>

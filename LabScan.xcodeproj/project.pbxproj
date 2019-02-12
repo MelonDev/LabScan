@@ -61,6 +61,8 @@
 		1580996222132E600058E57B /* TestB.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1580996122132E600058E57B /* TestB.mlmodel */; };
 		15809964221332B60058E57B /* TestC.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 15809963221332B60058E57B /* TestC.mlmodel */; };
 		15809966221344AB0058E57B /* CollectData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15809965221344AB0058E57B /* CollectData.swift */; };
+		15809968221350D60058E57B /* FavoriteChecklist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15809967221350D60058E57B /* FavoriteChecklist.swift */; };
+		1580996B221358F10058E57B /* FavoriteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580996A221358F10058E57B /* FavoriteCell.swift */; };
 		1580AFCB2209324E0052CBBF /* PreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1580AFCA2209324E0052CBBF /* PreviewView.swift */; };
 		1580AFE5220963210052CBBF /* Inceptionv3.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = 1580AFE4220963210052CBBF /* Inceptionv3.mlmodel */; };
 		15CFCBD3220D730F00F6696F /* CustomUIview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 15CFCBD2220D730F00F6696F /* CustomUIview.swift */; };
@@ -157,6 +159,8 @@
 		1580996122132E600058E57B /* TestB.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TestB.mlmodel; sourceTree = "<group>"; };
 		15809963221332B60058E57B /* TestC.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = TestC.mlmodel; sourceTree = "<group>"; };
 		15809965221344AB0058E57B /* CollectData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectData.swift; sourceTree = "<group>"; };
+		15809967221350D60058E57B /* FavoriteChecklist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteChecklist.swift; sourceTree = "<group>"; };
+		1580996A221358F10058E57B /* FavoriteCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteCell.swift; sourceTree = "<group>"; };
 		1580AFCA2209324E0052CBBF /* PreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreviewView.swift; sourceTree = "<group>"; };
 		1580AFE4220963210052CBBF /* Inceptionv3.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = Inceptionv3.mlmodel; sourceTree = "<group>"; };
 		15CFCBD2220D730F00F6696F /* CustomUIview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomUIview.swift; sourceTree = "<group>"; };
@@ -255,6 +259,7 @@
 				1502829A2211D6F600D79F9D /* CollectionData.swift */,
 				1502829C22121D2000D79F9D /* ObjectData.swift */,
 				15809965221344AB0058E57B /* CollectData.swift */,
+				15809967221350D60058E57B /* FavoriteChecklist.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -449,6 +454,7 @@
 		157C6BC721EE6A90009DF69A /* Cell */ = {
 			isa = PBXGroup;
 			children = (
+				15809969221358D80058E57B /* Favorite */,
 				1502829E22121E0E00D79F9D /* SearchCell */,
 				152CD24D221033B30011BCC0 /* DetailCell */,
 				15CFCBD9220F083A00F6696F /* Scan */,
@@ -475,6 +481,14 @@
 				157C6BD221EE6FEF009DF69A /* Walthrough.png */,
 			);
 			path = Test;
+			sourceTree = "<group>";
+		};
+		15809969221358D80058E57B /* Favorite */ = {
+			isa = PBXGroup;
+			children = (
+				1580996A221358F10058E57B /* FavoriteCell.swift */,
+			);
+			path = Favorite;
 			sourceTree = "<group>";
 		};
 		15CFCBD6220E1BD500F6696F /* Cell */ = {
@@ -818,6 +832,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				15809968221350D60058E57B /* FavoriteChecklist.swift in Sources */,
 				15809964221332B60058E57B /* TestC.mlmodel in Sources */,
 				157C6BD721EE7F08009DF69A /* TestViewController.swift in Sources */,
 				157C6B8321EC8971009DF69A /* MainIphoneViewController.swift in Sources */,
@@ -839,6 +854,7 @@
 				150727B521F15ED000667D13 /* TestAppViewController.swift in Sources */,
 				157C6B4A21EC5C39009DF69A /* ViewController.swift in Sources */,
 				15E9CAC521F1B60200E4083B /* ProfileViewController.swift in Sources */,
+				1580996B221358F10058E57B /* FavoriteCell.swift in Sources */,
 				1580996222132E600058E57B /* TestB.mlmodel in Sources */,
 				15E9CAC721F1B61200E4083B /* ScanViewController.swift in Sources */,
 				15D2DA722212B10500F98D76 /* SearchCollectionCell.swift in Sources */,

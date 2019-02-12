@@ -18,6 +18,8 @@ class DetailViewController: UIViewController {
     var alertStatus = false
     
     var name :String = ""
+    var starCheck = false
+    var loadSecc = false
     
     
     override func viewDidLoad() {
@@ -61,22 +63,7 @@ class DetailViewController: UIViewController {
         
         self.navigationController?.setNavigationBarBorderColor(.clear)
         
-        let button = UIButton.init(type: .custom)
-        //let imageS = UIImage(named: "star.png")
-        
-        
-        button.setImage(UIImage(named: "star.png"), for: UIControl.State.normal)
-        button.addTarget(self, action: #selector(self.fvButtonPressed), for: UIControl.Event.touchUpInside)
-        //button.frame = CGRect(x: 0, y: 0, width: 1, height: 1)
-        button.widthAnchor.constraint(equalToConstant: 32.0).isActive = true
-        button.heightAnchor.constraint(equalToConstant: 32.0).isActive = true
-        //button.frame.size = CGSize(width: 1, height: 1)
-        button.backgroundColor = UIColor.clear
-        button.imageView?.contentMode = .scaleAspectFit
-        
-        let barButton = UIBarButtonItem(customView: button)
-    
-        self.navigationItem.rightBarButtonItem = barButton
+       
         
         
         let cancelButton = UIBarButtonItem.init(title: "ย้อนกลับ", style: .plain, target: self, action: #selector(cancelAction))
@@ -93,7 +80,16 @@ class DetailViewController: UIViewController {
     
     @objc func fvButtonPressed() {
         
-        print("Favorite")
+        //print("Favorite")
+        
+        //let e = ["english": english,"thai" :thai,"key" :fullName]
+        let ref :DatabaseReference = Database.database().reference()
+        
+        //let key = ref.childByAutoId().key
+        if(loadSecc){
+            ref.child("favorite").child(self.name).setValue(!starCheck)
+        }
+        
     }
     
     
@@ -132,17 +128,17 @@ class DetailViewController: UIViewController {
             stopLoadingDialog()
         }
         
-        let ref = Database.database().reference().child("lab").child("equipment").child("glass").child("group")
+        let ref = Database.database().reference()
         //self.showLoadingDialog()
         
         ref.observe(.value, with: {(snapshot) in
             //self.stopLoadingDialog()
             if(snapshot.hasChildren()){
                 
-                
-                print(self.name)
+                let sn = snapshot.childSnapshot(forPath: "lab").childSnapshot(forPath: "equipment").childSnapshot(forPath: "glass").childSnapshot(forPath: "group")
+                //print(self.name)
                 //let a = snapshot.childSnapshot(forPath: "Beaker").childSnapshot(forPath: "info")
-                let a = snapshot.childSnapshot(forPath: self.name).childSnapshot(forPath: "info")
+                let a = sn.childSnapshot(forPath: self.name).childSnapshot(forPath: "info")
 
                 let thai = a.childSnapshot(forPath: "thai").value as! String
                 //let english = a.childSnapshot(forPath: "english").value as! String
@@ -151,12 +147,19 @@ class DetailViewController: UIViewController {
                 
                 self.navigationItem.title = thai
                 
-                self.shareSnapshot = snapshot
+                self.shareSnapshot = sn
                 self.tableView.reloadData()
                 
                 if(self.alertStatus){
                     self.stopLoadingDialog()
                 }
+                
+                let fa = snapshot.childSnapshot(forPath: "favorite")
+                let fas = fa as! DataSnapshot
+                
+                
+                self.checkStar(check: fas)
+                
 
                 //self.engName.text = english
                 //self.desLabel.text = "\(des)\n\(des)\n\(des)\n\(des)"\
@@ -167,6 +170,61 @@ class DetailViewController: UIViewController {
                 
             }
         })
+    }
+    
+    func checkStar(check :DataSnapshot) {
+        
+        var pass = false
+        
+        if(check.childrenCount > 0){
+            for i in check.children {
+                
+                let iw = i as! DataSnapshot
+                let key = iw.key as! String
+                
+                if(key == self.name){
+                    let ia = iw.value as! Bool
+                    //print(ia)
+                    loadStar(check: ia)
+                    pass = true
+                } else {
+                    if(!pass){
+                        loadStar(check: false)
+                    }
+                }
+            }
+        }else {
+            loadStar(check: false)
+        }
+        
+       
+    }
+    
+    func loadStar(check :Bool) {
+    
+        
+        let button = UIButton.init(type: .custom)
+        //let imageS = UIImage(named: "star.png")
+        
+        if(check){
+            button.setImage(UIImage(named: "star-1.png"), for: UIControl.State.normal)
+        }else {
+            button.setImage(UIImage(named: "star.png"), for: UIControl.State.normal)
+        }
+        button.addTarget(self, action: #selector(self.fvButtonPressed), for: UIControl.Event.touchUpInside)
+        //button.frame = CGRect(x: 0, y: 0, width: 1, height: 1)
+        button.widthAnchor.constraint(equalToConstant: 32.0).isActive = true
+        button.heightAnchor.constraint(equalToConstant: 32.0).isActive = true
+        //button.frame.size = CGSize(width: 1, height: 1)
+        button.backgroundColor = UIColor.clear
+        button.imageView?.contentMode = .scaleAspectFit
+        
+        let barButton = UIBarButtonItem(customView: button)
+        
+        self.navigationItem.rightBarButtonItem = barButton
+        
+        starCheck = check
+        loadSecc = true
     }
     
     func setTextWithReload(label :UILabel,text :String) {
