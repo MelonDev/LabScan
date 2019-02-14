@@ -483,7 +483,7 @@ extension ScanViewController :UICollectionViewDelegate,UICollectionViewDataSourc
         let arr = Array(slot)
         var arrs :Array<String> = Array()
         for i in arr {
-            if(i.confidence > 0.95){
+            if(i.confidence > 0.80){
                 arrs.append("ITEM")
             }
         }
